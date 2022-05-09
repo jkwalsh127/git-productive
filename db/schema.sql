@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS gitpro_db;
+CREATE DATABASE gitpro_db;
