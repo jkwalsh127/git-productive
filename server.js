@@ -1,7 +1,7 @@
 //required packages
 const routes = require("./controllers");
 const express = require("express");
-const sequelize = require("./config/config");
+const sequelize = require("./config/connection");
 const exphbs = require("express-handlebars");
 const session = require("express-session");
 const helpers = require("./utils/helpers");
