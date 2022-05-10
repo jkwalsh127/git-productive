@@ -44,4 +44,18 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+//GET login route direct user to login page
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("login");
+});
+
+//GET signup route direct user to signup page
+router.get("/signup", (req, res) => {
+  res.render("signup");
+});
+
 module.exports = router;
