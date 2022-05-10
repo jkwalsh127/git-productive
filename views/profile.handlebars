@@ -1,0 +1,51 @@
+
+
+    <div class="flex flex-col w-full lg:flex-row">
+
+        <div class="grid flex-grow card bg-base-300 rounded-box place-items-center">
+
+            <div class="card w-96 bg-base-100 shadow-xl project-list">
+                <div class="card-body">
+                <h2 class="card-title">Your Projects</h2>
+
+                <div>
+                    <div class="flex flex-row">
+                        <a href="" class="basis-3/4">Project1</a>
+                        <button class="basis-1/4">Delete</button>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="divider">|</div> 
+
+        <div class="grid flex-grow card bg-base-300 rounded-box place-items-center">
+            
+            <div class="card w-96 bg-base-100 shadow-xl">
+                <div class="card-body">
+                <h2 class="card-title">Create a new Project</h2>
+
+                <form class="form-control w-full max-w-xs new-project-form">
+                    <label class="label" for="new-project-name">
+                        <span class="label-text">Project name</span>
+                    </label>
+                    <input type="text" placeholder="enter a name for your project" class="input input-bordered w-full max-w-xs" id="new-project-name"/>
+                    <label class="label" for="new-project-description">
+                        <span class="label-text">Short description</span>
+                    </label>
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" id="new-project-description"/>
+                </form>  
+
+                <div class="card-actions justify-center">
+                    <button class="btn btn-primary" type="submit">Create Project</button>
+                </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+
+    <script src="/js/profile.js"></script>
