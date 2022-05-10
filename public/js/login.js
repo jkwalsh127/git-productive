@@ -16,7 +16,7 @@ async function loginFormHandler(event) {
       });
   // If successful, redirect the browser to the dashboard page
       if (response.ok) {
-        document.location.replace("/dashboard");
+        document.location.replace("/profile");
       } else {
         alert(response.statusText);
       }
