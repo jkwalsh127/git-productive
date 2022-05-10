@@ -7,12 +7,27 @@
                 <div>
                     <h3 class="card-title">Current Projects</h3>
                     {{#if projects.length}}
-                    {{#each projects as |project|}}
-                    <div class="flex flex-row">
-                        <a href="/project/{{project.id}}" class="basis-3/4">{{project.name}}</a>
-                        <button class="basis-1/4">Delete</button>
+                    <div class="overflow-x-auto">
+                      <table class="table w-full">
+                        <!-- head -->
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Delete</th>
+                          </tr>
+                        </thead>
+                        {{#each projects as |project|}}
+                        <tbody>
+                          <tr class="hover">
+                            <th>{{project.id}}</th>
+                            <td><a href="/project/{{project.id}}" class="basis-3/4">{{project.name}}</a></td>
+                            <td><button class="basis-1/4">Delete</button></td>
+                          </tr>
+                        </tbody>
+                        {{/each}}
+                      </table>
                     </div>
-                    {{/each}}
                     {{/if}}
                 </div>
             </div>
