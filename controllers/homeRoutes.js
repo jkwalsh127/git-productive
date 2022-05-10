@@ -2,6 +2,24 @@ const router = require('express').Router();
 const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+
+router.get('/', (req, res) => {
+    res.render('homepage')
+})
+//route for login
+router.get("/login", (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect("/");
+      return;
+    }
+    res.render("login");
+  });
+  
+  //route for signup page
+  router.get("/signup", (req, res) => {
+    res.render("signup");
+  });
+
 router.get('/project/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
@@ -43,5 +61,6 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;
