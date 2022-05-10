@@ -9,12 +9,12 @@ router.get('/', (req, res) => {
 //route for login
 router.get("/login", (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect("/");
+      res.redirect("/profile");
       return;
     }
     res.render("login");
   });
-  
+
   //route for signup page
   router.get("/signup", (req, res) => {
     res.render("signup");

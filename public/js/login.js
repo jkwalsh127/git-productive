@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
     headers: { 'Content-Type': 'application/json' }
   })
   .then(function() {
-    document.location.replace('profile')
+    document.location.replace('/profile')
   })
   .catch(err => console.log(err))
 
