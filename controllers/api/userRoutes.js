@@ -3,7 +3,7 @@ const { User } = require("../../models");
 
 // when user signs up, we create a username and password in the request
 // for our user data, what we want to is log them into their session
-router.post('/', (req, res) => {
+router.post ('/', (req, res)  => {
 
   User.create({
       username: req.body.username,
@@ -25,25 +25,25 @@ router.post('/', (req, res) => {
       });
 });
 
-// post '/login' when user clicks login button, find their corresponding username
 router.post("/login", (req, res) => {
+  console.log(req)
   User.findOne({
     where: {
       username: req.body.username,
     },
   })
-    .then((userData) => {
-      if (!userData) {
-        res.status(400).json({ message: "No user with that username!" });
-        return;
-      }
-      const validPassword = userData.checkPassword(req.body.password);
-
-      if (!validPassword) {
-        res.status(400).json({ message: "Incorrect password!" });
-        return;
-      }
-      req.session.save(() => {
+  .then((userData) => {
+    if (!userData) {
+      res.status(400).json({ message: "No user with that username!" });
+      return;
+    }
+    const validPassword = userData.checkPassword(req.body.password);
+    
+    if (!validPassword) {
+      res.status(400).json({ message: "Incorrect password!" });
+      return;
+    }
+    req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.username = userData.username;
         req.session.loggedIn = true;
