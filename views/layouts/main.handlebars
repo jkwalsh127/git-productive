@@ -23,7 +23,11 @@
                   <ul class="p-2">
             </div>
             <div class="navbar-end">
+              {{#if loggedIn}}
+              <a class="btn mr-8" href="/" id="logout">Logout</a>
+              {{else}}
               <a class="btn mr-8" href="/login">Login</a>
+              {{/if}}
             </div>
           </div>
     </header>
@@ -49,5 +53,9 @@
             </div>
         </footer>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 </html>
