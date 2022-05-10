@@ -5,7 +5,6 @@ const loginFormHandler = async (event) => {
     const username = document.querySelector("#username-login").value.trim();
     const password = document.querySelector("#password-login").value.trim();
 
-
   fetch('api/users/login', {
     method: 'POST',
     body: JSON.stringify({
@@ -18,7 +17,6 @@ const loginFormHandler = async (event) => {
     document.location.replace('/profile')
   })
   .catch(err => console.log(err))
-
   }
   
   document.querySelector("#login-form").addEventListener("submit", loginFormHandler);
