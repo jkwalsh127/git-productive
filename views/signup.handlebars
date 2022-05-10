@@ -1,19 +1,20 @@
 
-  <div class="justify-center flex mt-96">
+<div class="justify-center flex mt-40">
+ <form id="signup-form" class="form">
   <div class="card w-96 bg-neutral text-neutral-content">
     <div class="card-body items-center text-center">
-      <h2 class="card-title">Sign up today!</h2>
-      <p>Sign in if you already have an account</p><br>
+      <h2 class="card-title">Sign up today!</h2><br>
       <div class="form-control w-full max-w-xs">
-        <input id="username-signup" type="text" placeholder="Username" class="text-neutral input input-bordered input-primary w-full max-w-xs input-md mb-4" />
-        <input id="password-signup" type="text" placeholder="Password" class="text-neutral input input-bordered input-primary w-full max-w-xs input-md mb-4" />
+        <input id="username-signup" type="text" placeholder="Username" class="place-self-center text-neutral input input-bordered input-primary w-64 max-w-xs input-md mb-4" />
+        <input id="password-signup" type="text" placeholder="Password" class="place-self-center text-neutral input input-bordered input-primary w-64 max-w-xs input-md mb-4" />
       </div>
       <div class="card-actions justify-end">
-        <button class="btn btn-primary">Sign up</button>
-        <a class="btn btn-primary" href="/signin">Sign in</a>
+        <button class="btn btn-primary btn-wide btn-active hover:bg-primary" type="submit">Sign up</button>
       </div>
+      <a class ="underline" href="/login">Login instead</a>
     </div>
   </div>
+ </form>
 </div>
 
-  <script src="/js/signup.js"></script>
+<script src="/js/signup.js"></script>
