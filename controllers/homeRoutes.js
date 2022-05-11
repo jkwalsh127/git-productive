@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Project, User, Code } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -61,5 +61,9 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+//GET route for code snippet
+
 
 module.exports = router;
