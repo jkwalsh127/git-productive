@@ -31,7 +31,7 @@
     height: 100vh;
     width: 100vw;
     background-color: rgba( 0, 0, 0, 0.3);
-    ponter-events: none;
+    pointer-events: none;
     transition: opacity 0.3s ease;
     z-index: 2;
 }
@@ -43,10 +43,6 @@
 }
 
 .modal-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     background-color: white;
     width: 600px;
     height: 300px;
@@ -57,25 +53,10 @@
 }
 
 
-#animateMe {
-    color: #fff;
-    font-weight: 800;
-    font-size: 5vw;
-    font-family: "Khula", sans-serif;
-    height: 100vh;
-    box-sizing: border-box;
-    margin: 0;
-    pointer-events: none;
-  }
-
-
 .modal-card h1 {
     font-size: 16px;
 }
 
-#total-time {
-    display: flex;
-}
 #total-time {
     display: flex;
 }
