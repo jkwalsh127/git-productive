@@ -4,6 +4,7 @@ const withAuth = require("../../utils/auth");
 
 //GET route by id
 router.get("/:id", withAuth, (req, res) => {
+  res.send('testing')
   Code.findByPK(
     {
       //sections to get
@@ -18,14 +19,16 @@ router.get("/:id", withAuth, (req, res) => {
       },
     }
   )
-    .then((codeData) => {
-      //if there is no data by that id, send message
-      if (!codeData) {
-        res.status(404).json({ message: "No code snippet found." });
-        return;
-      }
-      //post results
-      res.json(codeData);
+  .then((codeData) => {
+    //if there is no data by that id, send message
+    if (!codeData) {
+      res.status(404).json({ message: "No code snippet found." });
+      return;
+    }
+    //post results
+    res.json(codeData);
+    res.render('codeSnippet')
+
     })
     .catch((err) => {
       console.log(err);
