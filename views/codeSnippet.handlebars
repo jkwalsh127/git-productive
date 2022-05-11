@@ -16,9 +16,8 @@
       <h2>Enter Brief Description</h2>
       <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs code-description" />
       <h2>Enter Code Snippet</h2>
-      <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs code-content" />
-        <div class="modal-action">
-          <button for="my-modal-5" class="btn add-code-btn" type="button">Add Code</button>
+      <textarea class="textarea textarea-primary w-full" placeholder="Type your code here.."></textarea>        <div class="modal-action">
+          <button for="my-modal-5" class="btn add-code-btn btn-primary  btn-active hover:bg-primary" type="button">Add Code</button>
         </div>
       </div>
     </div>
@@ -57,8 +56,8 @@
   {{!-- render code snippet card --}}
 <div class="mockup-code">
   <h2>{{code.title}}</h2>
+  <h3>{{code.description}}</h3>
   <pre data-prefix="$"><code>{{code.content}}</code></pre> 
-  <p>{{code.description}}</p>
 </div>
 </div>
 
