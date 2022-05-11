@@ -6,6 +6,21 @@
     height: 100%;
 }
 
+#animateMe {
+    color: #fff;
+    font-weight: 800;
+    font-size: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Khula", sans-serif;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    pointer-events: none;
+  }
+
 .modal-container {
     display: none;
     align-items: center;
@@ -61,3 +76,7 @@
 #total-time {
     display: flex;
 }
+#total-time {
+    display: flex;
+}
+
