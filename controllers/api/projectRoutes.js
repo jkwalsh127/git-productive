@@ -34,18 +34,29 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-router.put('/:id', withAuth, async (req, res) => {
-  try {
-    const projectData = Project.update(req.body, {
+router.put('/:id', withAuth, (req, res) => {
+  Project.update(
+    {
+      wage: req.body.wage,
+      time: req.body.time,
+    },
+    {
       where: {
         id: req.params.id,
-      },
+      }
+    }
+  )
+    .then((projectData) => {
+      if (!projectData) {
+        res.status(404).json({message: "No project found with this id"});
+        return;
+      }
+      res.json(projectData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
-    res.status(200).json(projectData);
-    alert('Successfully updated the billable hours for this project');
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+  });
 
 module.exports = router;

@@ -252,15 +252,14 @@
             </div>
           </div>
           <div class="stat-actions">
-            <button class="btn btn-sm btn-success" id="save-time">Save Time</button>
+            <button class="btn btn-sm btn-success" id="save-time">Save Time and Wage</button>
           </div>
         </div>
       
         <div class="stat">
           <div class="stat-title">Current Charge</div>
-          <div class="stat-value">$<p id="earned-wage">0</p></div>
-          <div class="stat-actions">
-            <button class="btn btn-sm">Complete</button> 
+          <div class="flex flex-row">
+            <div class="stat-value">$<p id="earned-wage">{{this.wage}}</p></div>
           </div>
       </div>
   
@@ -310,4 +309,5 @@
 </div>
 
 <script src="/js/project.js"></script>
+<script src="/js/updateWage.js"></script>
 <script src="https://cdn.tailwindcss.com"></script>
