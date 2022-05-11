@@ -17,20 +17,18 @@ Code.init(
         content: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+          is: /^[0-9a-f]{1000}$/i
+        }
+      },
+      description: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
       user_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
         references: {
           model: "user",
-          key: "id",
-        },
-      },
-      projects_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: "project",
           key: "id",
         },
       },

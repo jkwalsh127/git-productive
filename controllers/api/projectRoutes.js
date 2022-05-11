@@ -8,7 +8,7 @@ router.post('/', withAuth, async (req, res) => {
       ...req.body,
       user_id: req.session.user_id,
     });
-
+    res.render('profile');
     res.status(200).json(newProject);
   } catch (err) {
     res.status(400).json(err);
@@ -27,10 +27,24 @@ router.delete('/:id', withAuth, async (req, res) => {
       res.status(404).json({ message: 'No project found with this id!' });
       return;
     }
-
+    res.render('profile');
     res.status(200).json(projectData);
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const projectData = Project.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json(projectData);
+    alert('Successfully updated the billable hours for this project');
+  } catch (err) {
+    res.status(400).json(err);
   }
 });
 

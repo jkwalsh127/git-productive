@@ -26,6 +26,7 @@
             <div class="navbar-end">
               {{#if loggedIn}}
               <a class="btn btn-primary btn-12 custom-btn mr-8" href="/profile" id="profile">My Profile</a>
+              <a class="btn btn-primary btn-12 custom-btn mr-8" href="/codes" id="profile">My Saved Code</a>
               <a class="btn btn-primary btn-12 custom-btn mr-8" href="/" id="logout">Logout</a>
               {{else}}
               <a class="btn btn-primary mr-8" href="/login">Login</a>
@@ -58,7 +59,6 @@
      <script src="https://unpkg.com/scrollreveal"></script>
      <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="/js/homepage.js"></script>
-    <script src="/js/main.js"></script>
     
 
     {{#if loggedIn}}
