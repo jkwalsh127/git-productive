@@ -34,4 +34,18 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const projectData = Project.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json(projectData);
+    alert('Successfully updated the billable hours for this project');
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;

@@ -161,25 +161,36 @@ async function workValue(rate) {
 const saveTime = async (event) => {
   event.preventDefault();
 
-  // var min = minuteTotal.innerHTML;
-  // var m = (Math.round(min/15) * 15) % 60;
-  // var newM = m/100;
-  // var hr = hourTotal.innerHTML + newM;
-  var totalWage = "$" + earnedWage.innerHTML;
+  var min = minuteTotal.innerHTML;
+  var m = (Math.round(min/15) * 15) % 60;
+  var newM = m/100;
 
-  if (totalWage) {
-    const response = await fetch(`/api/projects`, {
-      method: 'POST',
-      body: JSON.stringify({ sec, min, hr }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    if (response.ok) {
-      res.render('project');
-    } else {
-      alert('Failed to save time to database');
-    }
+  var totalWage = "$" + earnedWage.innerHTML;
+  var hr = hourTotal.innerHTML;
+  var totalTime = hr += newM;
+
+  const id = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
+
+  console.log(id);
+  console.log(totalWage);
+  console.log(totalTime);
+
+  const response = await fetch(`/api/projects/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({ 
+      wage: totalWage,
+      time: totalTime
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  if (response.ok) {
+    res.render('project');
+  } else {
+    alert('Failed to save time to database');
   }
 };
 
