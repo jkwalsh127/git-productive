@@ -3,8 +3,14 @@ const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-router.get('/', (req, res) => {
-    res.render('homepage')
+router.get('/', async (req, res) => {
+  try {
+
+    res.render('homepage', {loggedIn: req.session.loggedIn})
+  }
+  catch (err) {
+    res.status(500).json(err);
+  }
 })
 //route for login
 router.get("/login", (req, res) => {
