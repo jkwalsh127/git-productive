@@ -1,5 +1,7 @@
 
-  const timer = document.getElementById('timer');
+const timer = document.getElementById('timer');
+const modalContainer = document.getElementById('modal-container');
+const continueBtn = document.getElementById('continue');
 
   var hr = 0;
   var min = 0;
@@ -58,7 +60,7 @@
       console.log(sec);
       if (breakTime == sec) {
         stopTimer();
-        document.querySelector('#my-modal-2').modal({show:true});
+        modalContainer.classList.add('show');
       }
   
       setTimeout("timerCycle()", 1000);
@@ -68,3 +70,7 @@
   function resetTimer() {
       timer.innerHTML = '00:00:00';
   }
+
+continueBtn.addEventListener('click', () => {
+  modalContainer.classList.remove('show');
+});
