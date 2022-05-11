@@ -23,45 +23,46 @@ const newProjectFormHandler = async (event) => {
   }
 };
 
-async function delButtonHandler(event) {
-  event.preventDefault();
+// async function delButtonHandler(event) {
+//   event.preventDefault();
 
-  const id = window.location.toString().split("/")[
-    window.location.toString().split("/").length - 1
-  ];
+//   const id = window.location.toString().split("/")
+// [window.location.toString().split("/").length - 1];
+// console.log(id)
+//   const response = await fetch(`/api/projects/${id}`, {
+//     method: "DELETE",
+//     body: JSON.stringify({
+//       project_id: id,
+//     }),
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   });
 
-  const response = await fetch(`/api/projects/${id}`, {
-    method: "DELETE",
-    body: JSON.stringify({
-      project_id: id,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  if (response.ok) {
-    document.location.replace("/profile");
-  } else {
-    alert(response.statusText);
-  }
-}
-
-// const delButtonHandler = async (event) => {
-//   if (event.target.hasAttribute("data-id")) {
-//     const id = event.target.getAttribute("data-id");
-
-//     const response = await fetch(`/api/projects/${id}`, {
-//       method: "DELETE",
-//     });
-
-//     if (response.ok) {
-//       document.location.replace("/profile");
-//     } else {
-//       alert("Failed to delete project");
-//     }
+//   if (response.ok) {
+//     document.location.replace("/profile");
+//   } else {
+//     alert(response.statusText);
 //   }
-// };
+// }
+
+const delButtonHandler = async (event) => {
+  event.preventDefault();
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
+  // console.log(id);
+    const response = await fetch(`/api/projects/${id}`, {
+      method: "DELETE",
+    });
+    console.log(id);
+
+    if (response.ok) {
+      document.location.replace("/profile");
+    } else {
+      alert("Failed to delete project");
+    }
+  }
+};
 
 document
   .querySelector(".new-project-form")

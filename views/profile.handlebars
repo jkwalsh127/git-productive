@@ -12,7 +12,6 @@
                         <!-- head -->
                         <thead>
                           <tr>
-                            <th></th>
                             <th>Name</th>
                             <th>Delete</th>
                           </tr>
@@ -20,9 +19,8 @@
                         {{#each projects as |project|}}
                         <tbody>
                           <tr class="hover">
-                            <th>{{project.id}}</th>
-                            <td><a href="/project/{{project.id}}" class="basis-3/4">{{project.name}}</a></td>
-                            <td><button class="basis-1/4 project-list">Delete</button></td>
+                            <th><a href="/project/{{project.id}}" class="basis-3/4">{{project.name}}</a></th>
+                            <td><button data-id="{{project.id}}" class="basis-1/4 project-list">Delete</button></td>
                           </tr>
                         </tbody>
                         {{/each}}
