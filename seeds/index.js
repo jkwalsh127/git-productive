@@ -4,6 +4,7 @@ const { User, Project } = require('../models');
 const userData = require('./userData.json');
 const projectData = require('./projectData.json');
 const seedActivity = require('./activityData');
+const seedCodes = require('./codeData');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -20,7 +21,7 @@ const seedDatabase = async () => {
     });
   }
  await seedActivity();
- await 
+ await seedCodes();
  
   process.exit(0);
 };

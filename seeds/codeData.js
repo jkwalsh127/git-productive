@@ -28,6 +28,6 @@ const codeData = [
   },
 ];
 
-const seedCodes = () => Activity.bulkCreate(codeData);
+const seedCodes = () => Code.bulkCreate(codeData);
 
 module.exports = seedCodes;

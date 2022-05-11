@@ -30,4 +30,4 @@ Code.belongsTo(User, {
   foreignKey: 'user_id',
 })
 
-module.exports = { User, Project, Activity, Exercise  };
+module.exports = { User, Project, Activity, Exercise, Code  };
