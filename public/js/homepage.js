@@ -1,25 +1,15 @@
 
-// import anime from 'animejs/lib/anime.es.js';
-//get title to animate
-
-console.log('hello')
-// anime({
-//     targets: '#animateMe',
-//     translateX: 250,
-//     // rotate: '1turn',
-//     // duration: 800
-//   });
-
-  var animation = anime.timeline({
-    targets: test.listAll,
-    delay: anime.stagger(50),
-    loop: true
+anime({
+    targets: '#animateMe',
+    translateY: 270,
+    translateY: -150,
+    delay: anime.stagger(100) // increase delay by 100ms for each elements.
   });
 
-  animation
-    .add({
-      translateY: -40
-    })
-    .add({
-      translateY: 0
-    });
+  anime({
+    targets: '.card',
+    translateX: 250,
+    translateX: -5,
+    // scale: 2,
+    rotate: '1turn'
+  });

@@ -1,8 +1,25 @@
 #gitlogo {
     border: 1em;
 }
+#homepageImage {
+    width: 100%;
+    height: 100%;
+}
+#animateMe {
+    color: #fff;
+    font-weight: 800;
+    font-size: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Khula", sans-serif;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    pointer-events: none;
+  }
 
-<<<<<<< HEAD
 .modal-container {
     display: none;
     align-items: center;
@@ -25,22 +42,6 @@
 }
 
 .modal-card {
-=======
-#homepageImage {
-    width: 100%;
-    height: 100%;
-}
-
-#animateMe {
-    color: #fff;
-    font-weight: 800;
-    font-size: 5vw;
->>>>>>> 5776d376f351146f6cc997d2e2244bd308520f4b
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-<<<<<<< HEAD
     background-color: white;
     width: 600px;
     height: 300px;
@@ -57,11 +58,4 @@
 #total-time {
     display: flex;
 }
-=======
-    font-family: "Khula", sans-serif;
-    height: 100vh;
-    box-sizing: border-box;
-    margin: 0;
-  }
 
->>>>>>> 5776d376f351146f6cc997d2e2244bd308520f4b
