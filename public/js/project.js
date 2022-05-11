@@ -165,7 +165,7 @@ const saveTime = async (event) => {
   var m = (Math.round(min/15) * 15) % 60;
   var newM = m/100;
 
-  var totalWage = "$" + earnedWage.innerHTML;
+  var totalWage = earnedWage.innerHTML;
   var hr = hourTotal.innerHTML;
   var totalTime = hr += newM;
 
@@ -173,7 +173,6 @@ const saveTime = async (event) => {
     window.location.toString().split("/").length - 1
   ];
 
-  console.log(id);
   console.log(totalWage);
   console.log(totalTime);
 
