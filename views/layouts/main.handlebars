@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-        <header>
+    <header>
         <div class="navbar bg-base-200 neutral pt-4">
             <div class="navbar-start">
               <div class="dropdown">
@@ -24,7 +24,11 @@
                   <ul class="p-2">
             </div>
             <div class="navbar-end">
-              <a class="btn mr-8" href="/login">Login</a>
+              {{#if loggedIn}}
+              <a class="btn btn-primary mr-8" href="/" id="logout">Logout</a>
+              {{else}}
+              <a class="btn btn-primary mr-8" href="/login">Login</a>
+              {{/if}}
             </div>
           </div>
     </header>
@@ -32,7 +36,6 @@
     <main>
         {{{body}}}
     </main>
-        <footer>
         <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
             <div class="grid grid-flow-col gap-4">
               <a class="link link-hover">About us</a> 
@@ -49,8 +52,16 @@
             <div>
               <p>Copyright © 2022 - All right reserved by GIT Productive Inc. </p>
             </div>
-          </footer>
-    </footer>
+        </footer>
     <script src="https://cdn.tailwindcss.com"></script>
+     <script src="https://unpkg.com/scrollreveal"></script>
+     <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="/js/homepage.js"></script>
+    <script src="/js/main.js"></script>
+    
+
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 </html>
