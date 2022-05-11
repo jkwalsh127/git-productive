@@ -5,6 +5,7 @@ const codeData = [
     title: "Sequelize Store Data",
     description: "Sets up the databnase dependent on the models",
     content: 'const SequelizeStore = require("connect-session-sequelize")(session.Store);',
+    user_id: 1
   },
   {
     title: "Set Up Sessions",

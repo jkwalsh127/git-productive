@@ -35,6 +35,7 @@ router.get("/:id", withAuth, (req, res) => {
 
 //create new code snippet
 router.post("/", withAuth, async (req, res) => {
+  console.log('api codes')
   try {
     const newSnippet = await Code.create({
       ...req.body,

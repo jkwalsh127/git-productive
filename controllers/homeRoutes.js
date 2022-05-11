@@ -68,7 +68,16 @@ router.get("/profile", withAuth, async (req, res) => {
 //GET route for code snippet
 router.get("/codes", withAuth, async (req, res) => {
   try {
-    res.render("codeSnippet", { loggedIn: req.session.loggedIn });
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: {exclude: ["password"]},
+      include: [{model: Code}]
+    })
+    const user = userData.get({ plain: true });
+
+    res.render("codeSnippet", {
+      ...user,
+      loggedIn: true,
+  });
   } catch (err) {
     res.status(500).json(err);
   }
