@@ -60,6 +60,14 @@
 }
 
 .code-cards {
+    justify-content: center;
     min-width: 300px;
-    min-height: 500px;
+    min-height: 600px;
+}
+
+.rendered-code {
+    justify-content: center;
+    min-height: 600px;
+    width: 900px;
+    margin: 20px;
 }

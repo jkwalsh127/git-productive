@@ -54,3 +54,26 @@ const codeList = document.querySelectorAll(".code-list");
 for (var i = 0; i < codeList.length; i++) {
   codeList[i].addEventListener("click", delButtonHandler);
 }
+
+
+// activeNote is used to keep track of the note in the textarea
+// let activeNote = {};
+
+// const renderActiveCode = () => {
+//   // hide(saveNoteBtn);
+
+//   if (activeNote.id) {
+//     noteTitle.setAttribute('readonly', true);
+//     noteText.setAttribute('readonly', true);
+//     noteTitle.value = activeNote.title;
+//     noteText.value = activeNote.text;
+//   } else {
+//     noteTitle.removeAttribute('readonly');
+//     noteText.removeAttribute('readonly');
+//     noteTitle.value = '';
+//     noteText.value = '';
+//   }
+// };
+
+
+//on click of new notes button
