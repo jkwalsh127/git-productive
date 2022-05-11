@@ -23,6 +23,10 @@
       sec = parseInt(sec);
       min = parseInt(min);
       hr = parseInt(hr);
+
+      const breakTime = document.querySelector('#break-input').value.trim();
+
+
   
       sec = sec + 1;
   
@@ -47,6 +51,15 @@
       }
   
       timer.innerHTML = hr + ':' + min + ':' + sec;
+
+
+
+      console.log(breakTime);
+      console.log(sec);
+      if (breakTime == sec) {
+        stopTimer();
+        document.querySelector('#my-modal-2').modal({show:true});
+      }
   
       setTimeout("timerCycle()", 1000);
     }

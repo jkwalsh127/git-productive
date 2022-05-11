@@ -17,6 +17,50 @@
         <button class="btn btn-primary" type="submit">Log Time</button>
       </div>
 
+      <div class="form-control">
+        <div class="input-group">
+          <input type="text" placeholder="How often should you take a break?" class="input input-bordered input-primary w-full max-w-xs" id="break-input"/>
+          <button class="btn btn-square" onclick="startTimer()">Submit</button>
+        </div>
+      </div>
+
+      <div class="stats bg-primary text-primary-content">
+        <div class="stat">
+          <div class="stat-title">Hours Logged</div>
+          <div class="stat-value">2.4</div>
+          <div class="stat-actions">
+            <button class="btn btn-sm btn-success">-</button>
+          </div>
+        </div>
+      
+        <div class="stat">
+          <div class="stat-title">Current Charge</div>
+          <div class="stat-value">$89,400</div>
+          <div class="stat-actions">
+            <button class="btn btn-sm">Complete</button> 
+          </div>
+      </div>
+
+<div class="modal" id="my-modal-2">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">Time for a break!</h3>
+    <p class="py-4">Here are some exercises for you</p>
+    <div class="modal-action">
+     <a href="#" class="btn" onclick="startTimer()">Keep Coding</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+</div>
+
+
       <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
         <div class="collapse-title text-xl font-medium">
           Name of first node module
