@@ -1,0 +1,65 @@
+<div class="flex flex-col w-full lg:flex-row">
+{{!-- code data history --}}
+  <div class="card w-96 bg-base-200 shadow-xl basis3/4 ml-32 my-16">
+    <div class="card-body items-center text-center code-cards">
+      <h2 class="card-title">Code Snippets!</h2>
+      <!-- The button to open modal -->
+<label for="my-modal-5" class="btn modal-button">Create New Code</label>
+
+<!-- Put this part before </body> tag -->
+  <form>
+      <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+      <div class="modal">
+        <div class="modal-box w-11/12 max-w-5xl">
+        <h2>Enter Title</h2>
+      <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs code-title" />
+      <h2>Enter Brief Description</h2>
+      <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs code-description" />
+      <h2>Enter Code Snippet</h2>
+      <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs code-content" />
+        <div class="modal-action">
+          <button for="my-modal-5" class="btn add-code-btn" type="button">Add Code</button>
+        </div>
+      </div>
+    </div>
+  </form>
+      {{#if codes.length}}
+        <div class="overflow-x-auto">
+          <table class="table w-full">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th>Code Title</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            {{#each codes as |code|}}
+              <tbody>
+                <tr class="hover">
+                  <th><a
+                      href="/codes/{{code.id}}"
+                      class="basis-3/4"
+                    >{{code.title}}</a></th>
+                  <td><button
+                      data-id="{{code.id}}"
+                      class="basis-1/4 code-list"
+                    >Delete</button></td>
+                </tr>
+              </tbody>
+            {{/each}}
+          </table>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+
+{{!-- grabbing from the code snippet partial page for the page to render --}}
+  {{!-- render code snippet card --}}
+<div class="mockup-code">
+  <h2>{{code.title}}</h2>
+  <pre data-prefix="$"><code>{{code.content}}</code></pre> 
+  <p>{{code.description}}</p>
+</div>
+</div>
+
+<script src="/js/code.js"></script>
