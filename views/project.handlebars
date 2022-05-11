@@ -19,11 +19,6 @@
       <div id="timer">
         00:00:00
       </div>
-      <div id="total-time">
-        <p id="second-total">0</p>
-        <p id="minute-total">0</p>
-        <p id="hour-total">0</p>
-      </div>
       <ul>
         <li><button class="btn btn-outline btn-primary" onclick="startTimer()">Start</button></li>
         <li><button class="btn btn-outline btn-secondary" onclick="stopTimer()">Stop</button></li>
@@ -43,7 +38,13 @@
       <div class="stats bg-primary text-primary-content">
         <div class="stat">
           <div class="stat-title">Hours Logged</div>
-          <div class="stat-value">2.4</div>
+          <div class="stat-value">
+            <div id="total-time">
+              <p id="hour-total">0 </p>
+              <p id="minute-total"> : 0 : </p>
+              <p id="second-total">0</p>
+            </div>
+          </div>
           <div class="stat-actions">
             <button class="btn btn-sm btn-success">-</button>
           </div>
@@ -51,7 +52,7 @@
       
         <div class="stat">
           <div class="stat-title">Current Charge</div>
-          <div class="stat-value">$89,400</div>
+          <div class="stat-value">$<p id="earned-wage">0</p></div>
           <div class="stat-actions">
             <button class="btn btn-sm">Complete</button> 
           </div>

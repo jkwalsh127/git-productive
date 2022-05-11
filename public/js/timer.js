@@ -5,14 +5,18 @@ const continueBtn = document.getElementById('continue');
 const secondTotal = document.getElementById('second-total');
 const minuteTotal = document.getElementById('minute-total');
 const hourTotal = document.getElementById('hour-total');
+const earnedWage = document.getElementById('earned-wage')
+
+const rate = 100;
 
   var hr = 0;
   var min = 0;
   var sec = 0;
   var stoptime = true;
-  var totalSec = [];
-  var totalMin = [];
-  var totalHr = [];
+
+  var totalSeconds = 0;
+  var totalMinutes = 0;
+  var totalHours = 0;
   
   function startTimer() {
     if (stoptime == true) {
@@ -31,6 +35,10 @@ const hourTotal = document.getElementById('hour-total');
       sec = parseInt(sec);
       min = parseInt(min);
       hr = parseInt(hr);
+      var totalSec = [];
+      var totalMin = [];
+      var totalHr = [];
+
 
       const breakTime = document.querySelector('#break-input').value.trim();
 
@@ -65,9 +73,11 @@ const hourTotal = document.getElementById('hour-total');
         await totalSec.push(sec);
         await totalMin.push(min);
         await totalHr.push(hr);
-        await addSeconds();
-        await addMinutes();
-        await addHours();
+        await addSeconds(totalSec);
+        await addMinutes(totalMin);
+        await addHours(totalHr);
+        await workValue(rate);
+        console.log(totalSec);
         stopTimer();
         modalContainer.classList.add('show');
       }
@@ -76,17 +86,18 @@ const hourTotal = document.getElementById('hour-total');
     }
   }
 
-function addSeconds() {
-  var totalSeconds = 0;
+function addSeconds(totalSec) {
   for (let i = 0; i < totalSec.length; i++) {
     totalSeconds += totalSec[i];
   }
   if (totalSeconds == 0) {
     return;
   }
-  return secondTotal.innerHTML = totalSeconds;
+  secondTotal.innerHTML = totalSeconds
+  return totalSeconds;
 }
-function addMinutes() {
+
+function addMinutes(totalMin) {
   var totalMinutes = 0;
   for (let i = 0; i < totalMin.length; i++) {
     totalMinutes += totalMin[i];
@@ -94,9 +105,11 @@ function addMinutes() {
   if (totalMinutes == 0) {
     return;
   }
-  return minuteTotal.innerHTML = totalMinutes;
+  minuteTotal.innerHTML = totalMinutes
+  return totalMinutes;
 }
-function addHours() {
+
+function addHours(totalHr) {
   var totalHours = 0;
   for (let i = 0; i < totalHr.length; i++) {
     totalHours += totalHr[i];
@@ -104,14 +117,30 @@ function addHours() {
   if (totalHours == 0) {
     return;
   }
-  return hourTotal.innerHTML = totalHours;
+  hourTotal.innerHTML = totalHours
+  return totalHours;
 }
   
-  function resetTimer() {
-      timer.innerHTML = '00:00:00';
-  }
+function resetTimer() {
+    sec = 0;
+    min = 0;
+    hr = 0;
+    var totalSec = [];
+    var totalMin = [];
+    var totalHr = [];
+    console.log(totalSec);
+    timer.innerHTML = '00:00:00';
+    return totalSec, totalMin, totalHr;
+}
 
 continueBtn.addEventListener('click', () => {
-  startTimer();
+  resetTimer();
   modalContainer.classList.remove('show');
 });
+
+async function workValue(rate) {
+  value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours)
+  console.log(value);
+  earnedWage.innerHTML = value;
+  return value;
+}
