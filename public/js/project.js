@@ -153,8 +153,7 @@ continueBtn.addEventListener('click', () => {
 
 async function workValue(rate) {
   value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours)
-  console.log(value);
-  earnedWage.innerHTML = value;
+  earnedWage.innerHTML = value.toFixed(2);
   return value;
 }
 
