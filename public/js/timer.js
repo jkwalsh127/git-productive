@@ -67,8 +67,6 @@ const rate = 100;
       timer.innerHTML = hr + ':' + min + ':' + sec;
 
       console.log(sec);
-      console.log(min);
-      console.log(hr);
       if (breakTime == sec) {
         await totalSec.push(sec);
         await totalMin.push(min);
@@ -128,7 +126,6 @@ function resetTimer() {
     var totalSec = [];
     var totalMin = [];
     var totalHr = [];
-    console.log(totalSec);
     timer.innerHTML = '00:00:00';
     return totalSec, totalMin, totalHr;
 }
