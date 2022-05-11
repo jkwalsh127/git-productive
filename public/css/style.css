@@ -42,9 +42,9 @@
 }
 
 .modal-card {
-    background-color: white;
+    background-color: rgba(65, 69, 185, 0.481);
     width: 600px;
-    height: 300px;
+    height: 650px;
     max-width: 100%;
     padding: 30px;
     border-radius: 5px;
@@ -60,6 +60,14 @@
 }
 
 .code-cards {
+    justify-content: center;
     min-width: 300px;
-    min-height: 500px;
+    min-height: 600px;
+}
+
+.rendered-code {
+    justify-content: center;
+    min-height: 600px;
+    width: 900px;
+    margin: 20px;
 }
