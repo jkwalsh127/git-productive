@@ -1,3 +1,14 @@
+<div class="modal-container" id="modal-container">
+  <div class="modal-card">
+    <h1>Models are Cool</h1>
+    <p>Lorem Ipsum</p>
+    <button class="btn btn-primary" id="continue">
+      Continue Coding
+    </button>
+  </div>
+</div>
+
+
 <h2 class="card-title">This Project Name</h2>
 <div class="flex flex-col w-full lg:flex-row">
   
@@ -27,7 +38,13 @@
       <div class="stats bg-primary text-primary-content">
         <div class="stat">
           <div class="stat-title">Hours Logged</div>
-          <div class="stat-value">2.4</div>
+          <div class="stat-value">
+            <div id="total-time">
+              <p id="hour-total">0 </p>
+              <p id="minute-total"> : 0 : </p>
+              <p id="second-total">0</p>
+            </div>
+          </div>
           <div class="stat-actions">
             <button class="btn btn-sm btn-success">-</button>
           </div>
@@ -35,28 +52,11 @@
       
         <div class="stat">
           <div class="stat-title">Current Charge</div>
-          <div class="stat-value">$89,400</div>
+          <div class="stat-value">$<p id="earned-wage">0</p></div>
           <div class="stat-actions">
             <button class="btn btn-sm">Complete</button> 
           </div>
       </div>
-
-<div class="modal" id="my-modal-2">
-  <div class="modal-box">
-    <h3 class="font-bold text-lg">Time for a break!</h3>
-    <p class="py-4">Here are some exercises for you</p>
-    <div class="modal-action">
-     <a href="#" class="btn" onclick="startTimer()">Keep Coding</a>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
   
 </div>
 
