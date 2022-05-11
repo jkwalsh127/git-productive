@@ -9,7 +9,8 @@ router.post("/", withAuth, async (req, res) => {
       ...req.body,
       user_id: req.session.user_id,
     });
-
+    res.render('codeSnippet');
+    
     res.status(200).json(newSnippet);
   } catch (err) {
     res.status(400).json(err);
@@ -60,6 +61,7 @@ router.delete("/:id", withAuth, async (req, res) => {
       res.status(404).json({ message: "No project found with this id!" });
       return;
     }
+    res.render('codeSnippet');
 
     res.status(200).json(codeData);
   } catch (err) {
