@@ -20,6 +20,7 @@ const seedDatabase = async () => {
     });
   }
  await seedActivity();
+ await 
  
   process.exit(0);
 };

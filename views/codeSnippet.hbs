@@ -1,0 +1,42 @@
+<div class="flex flex-col w-full lg:flex-row">
+
+{{!-- code data history --}}
+  <div class="card w-96 bg-base-200 shadow-xl basis3/4">
+    <div class="card-body items-center text-center">
+      <h2 class="card-title">Code Snippets!</h2>
+      <button class="btn btn-primary">Create New</button>
+      {{#if codes.length}}
+        <div class="overflow-x-auto">
+          <table class="table w-full">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th>Code Title</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            {{#each codes as |code|}}
+              <tbody>
+                <tr class="hover">
+                  <th><a
+                      href="/codes/{{code.id}}"
+                      class="basis-3/4"
+                    >{{code.title}}</a></th>
+                  <td><button
+                      data-id="{{code.id}}"
+                      class="basis-1/4 code-list"
+                    >Delete</button></td>
+                </tr>
+              </tbody>
+            {{/each}}
+          </table>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+
+<section class="code">
+  {{> codePartial code}}
+</section>
+
+</div>
