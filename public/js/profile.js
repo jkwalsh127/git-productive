@@ -50,7 +50,7 @@ const delButtonHandler = async (event) => {
   event.preventDefault();
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
-  // console.log(id);
+
     const response = await fetch(`/api/projects/${id}`, {
       method: "DELETE",
     });
@@ -68,6 +68,7 @@ document
   .querySelector(".new-project-form")
   .addEventListener("submit", newProjectFormHandler);
 
-document
-  .querySelector(".project-list")
-  .addEventListener("click", delButtonHandler);
+const projectList = document.querySelectorAll(".project-list");
+for (var i = 0; i < projectList.length; i++) {
+  projectList[i].addEventListener("click", delButtonHandler);
+}
