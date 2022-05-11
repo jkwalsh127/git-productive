@@ -36,9 +36,9 @@ const rate = 100;
       sec = parseInt(sec);
       min = parseInt(min);
       hr = parseInt(hr);
-      var totalSec = [];
-      var totalMin = [];
-      var totalHr = [];
+      // var totalSec = [];
+      // var totalMin = [];
+      // var totalHr = [];
 
 
       const breakTime = document.querySelector('#break-input').value.trim();
@@ -55,28 +55,34 @@ const rate = 100;
         sec = 0;
       }
   
-      // if (sec < 10 || sec == 0) {
-      //   sec = '0' + sec;
-      // }
-      // if (min < 10 || min == 0) {
-      //   min = '0' + min;
-      // }
-      // if (hr < 10 || hr == 0) {
-      //   hr = '0' + hr;
-      // }
   
       timer.innerHTML = hr + ':' + min + ':' + sec;
 
       console.log(sec);
-      if (breakTime == sec) {
-        await totalSec.push(sec);
-        await totalMin.push(min);
-        await totalHr.push(hr);
-        await addSeconds(totalSec);
-        await addMinutes(totalMin);
-        await addHours(totalHr);
+      if ((breakTime - 1) == sec) {
+        totalSeconds += (sec + 1);
+        totalMinutes += min;
+        totalHours += hr;
+        // await totalSec.push(sec);
+        // await totalMin.push(min);
+        // await totalHr.push(hr);
+        if (totalSeconds >= 60) {
+          totalMinutes = totalMinutes + 1;
+          totalSeconds = 0;
+        }
+        if (totalMinutes >= 60) {
+          hourTotal.innerHTML = totalHr + 1;
+          minuteTotal.innerHTML = 0;
+          secondTotal.innerHTML = 0;
+        }
+        secondTotal.innerHTML = totalSeconds;
+        minuteTotal.innerHTML = totalMinutes;
+        hourTotal.innerHTML = totalHours;
+
+        // await addSeconds(totalSeconds);
+        // await addMinutes(totalMinutes);
+        // await addHours(totalHours);
         await workValue(rate);
-        console.log(totalSec);
         stopTimer();
         modalContainer.classList.add('show');
       }
@@ -85,65 +91,61 @@ const rate = 100;
     }
   }
 
-function addSeconds(totalSec) {
-  for (let i = 0; i < totalSec.length; i++) {
-    totalSeconds += totalSec[i];
-  }
-  if (totalSeconds == 0) {
-    return;
-  }
-  if (totalSec == 60) {
-    totalMin = totalMin + 1;
-    totalSec = 0;
-  }
-  secondTotal.innerHTML = totalSeconds
-  return totalSeconds;
-}
+// function addSeconds(totalSec) {
+//   console.log(totalSeconds);
+//   for (let i = 0; i < totalSec.length; i++) {
+//     totalSeconds += totalSec[i];
+//   }
+//   if (totalSeconds == 0) {
+//     return;
+//   }
+//   if (totalSeconds >= 60) {
+//     totalMinutes = totalMinutes + 1;
+//     totalSeconds = 0;
+//   }
+//   secondTotal.innerHTML = totalSeconds
+//   return totalSeconds;
+// }
 
-function addMinutes(totalMin) {
-  var totalMinutes = 0;
-  for (let i = 0; i < totalMin.length; i++) {
-    totalMinutes += totalMin[i];
-  }
-  if (totalMinutes == 0) {
-    return;
-  }
-  if (totalMin == 60) {
-    totalHr = totalHr + 1;
-    totalMin = 0;
-    totalSec = 0;
-  }
-  minuteTotal.innerHTML = totalMinutes
-  return totalMinutes;
-}
+// function addMinutes(totalMin) {
+//   let totalHr = hourTotal.innerHTML;
+//   for (let i = 0; i < totalMin.length; i++) {
+//     totalMinutes += totalMin[i];
+//   }
+//   if (totalMinutes == 0) {
+//     return;
+//   }
+//   if (totalMinutes >= 60) {
+//     hourTotal.innerHTML = totalHr + 1;
+//     minuteTotal.innerHTML = 0;
+//     secondTotal.innerHTML = 0;
+//   }
+//   minuteTotal.innerHTML = totalMinutes
+//   return totalMinutes;
+// }
 
-function addHours(totalHr) {
-  var totalHours = 0;
-  for (let i = 0; i < totalHr.length; i++) {
-    totalHours += totalHr[i];
-  }
-  if (totalHours == 0) {
-    return;
-  }
-  hourTotal.innerHTML = totalHours
-  return totalHours;
-}
+// function addHours(totalHr) {
+//   for (let i = 0; i < totalHr.length; i++) {
+//     totalHours += totalHr[i];
+//   }
+//   if (totalHours == 0) {
+//     return;
+//   }
+//   hourTotal.innerHTML = totalHours
+//   return totalHours;
+// }
   
 function resetTimer() {
     sec = 0;
     min = 0;
     hr = 0;
-    var totalSec = [];
-    var totalMin = [];
-    var totalHr = [];
+    // var totalSec = [];
+    // var totalMin = [];
+    // var totalHr = [];
     timer.innerHTML = '00:00:00';
-    return totalSec, totalMin, totalHr;
+    // return totalSec, totalMin, totalHr;
 }
 
-continueBtn.addEventListener('click', () => {
-  resetTimer();
-  modalContainer.classList.remove('show');
-});
 continueBtn.addEventListener('click', () => {
   resetTimer();
   modalContainer.classList.remove('show');
@@ -156,28 +158,17 @@ async function workValue(rate) {
   return value;
 }
 
-saveTimeBtn.addEventListener('click', () => {
-  // var min = minuteTotal.innerHTML
-  // console.log(min);
-  // var m = (Math.round(min/15) * 15) % 60;
-  // console.log(m);
-  var sec = secondTotal.innerHTML
-  console.log(sec);
-  var s = (Math.round(sec/15) * 15) % 60;
-  console.log(s);
-  
-});
 
 const saveTime = async (event) => {
   event.preventDefault();
 
-  var sec = secondTotal.innerHTML;
-  var s = (Math.round(sec/15) * 15) % 60;
-  var min = minuteTotal.innerHTML;
-  var m = (Math.round(min/15) * 15) % 60;
-  var hr = hourTotal.innerHTML;
+  // var min = minuteTotal.innerHTML;
+  // var m = (Math.round(min/15) * 15) % 60;
+  // var newM = m/100;
+  // var hr = hourTotal.innerHTML + newM;
+  var totalWage = "$" + earnedWage.innerHTML;
 
-  if (sec && min && hr) {
+  if (totalWage) {
     const response = await fetch(`/api/projects`, {
       method: 'POST',
       body: JSON.stringify({ sec, min, hr }),
@@ -192,3 +183,5 @@ const saveTime = async (event) => {
     }
   }
 };
+
+saveTimeBtn.addEventListener('click', saveTime);
