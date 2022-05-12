@@ -1,15 +1,27 @@
 [
     {
       "name": "Project1",
-      "description": "Description for project 1"
+      "description": "Description for project 1",
+      "wage": "180",
+      "hr": "6",
+      "min": "8",
+      "sec": "22"
     },
     {
       "name": "Project2",
-      "description": "Description for project 2"
+      "description": "Description for project 2",
+      "wage": "500",
+      "hr": "10",
+      "min": "12",
+      "sec": "47"
     },
     {
       "name": "Project3",
-      "description": "Description for project 3"
+      "description": "Description for project 3",
+      "wage": "400",
+      "hr": "10",
+      "min": "4",
+      "sec": "11"
     }
   ]
   

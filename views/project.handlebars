@@ -74,10 +74,13 @@
          
   <div class="card w-96 bg-base-100 shadow-xl" style="width: 300px;">
     <div class="card-body">
-    <h2 class="card-title">Add node module</h2>    
+    <h2 class="card-title">Add node module</h2>   
+
+    {{#if codes.length}} 
+              {{#each codes as |code|}}
       <form class="form-control w-full max-w-xs new-project-form">
         <label class="label" for="new-module-name">
-          <span class="label-text">Module name</span>
+          <span class="label-text">{{code.name}}</span>
         </label>
         <input type="text" placeholder="enter the name of the module" class="input input-bordered w-full max-w-xs" id="new-module-name"/>
         <label class="label" for="new-module-install">
@@ -88,12 +91,10 @@
           <span class="label-text">Documentation link</span>
         </label>
         <input type="text" placeholder="enter the link to this module's docs" class="input input-bordered w-full max-w-xs" id="new-module-docs"/>
-      </form>    
-      <div class="card-actions justify-center">
-          <button class="btn btn-primary" type="submit">
-            Add Module
-          </button>
-      </div>
+      </form>  
+      {{/each}}
+      {{/if}}  
+
     </div>
   </div>
 
