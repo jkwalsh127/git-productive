@@ -25,9 +25,23 @@ Project.init(
     },
     wage: {
       type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue:"0",
     },
-    time: {
+    hr: {
       type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "0",
+    },
+    min: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "0",
+    },
+    sec: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "0",
     },
     user_id: {
       type: DataTypes.INTEGER,

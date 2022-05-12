@@ -38,7 +38,9 @@ router.put('/:id', withAuth, (req, res) => {
   Project.update(
     {
       wage: req.body.wage,
-      time: req.body.time,
+      hr: req.body.hr,
+      min: req.body.min,
+      sec: req.body.sec
     },
     {
       where: {

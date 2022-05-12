@@ -1,33 +1,37 @@
 const minTotal = document.getElementById('minute-total');
 const hrTotal = document.getElementById('hour-total');
+const secTotal = document.getElementById('second-total');
 const earned = document.getElementById('earned-wage');
 const saveTimeBtn = document.getElementById('save-time');
 
-function runSave(event) {
+async function saveTime(event) {
+
     event.preventDefault();
 
-    let minutes = minTotal.innerHTML;
-    let m = (Math.round(minutes/15) * 15) % 60;
-    let newM = m/100;
+    // let minutes = minTotal.innerHTML;
+    // let m = (Math.round(minutes/15) * 15) % 60;
+    // let newM = m/100;
 
     const totalWage = earned.innerHTML;
-    let hrs = hrTotal.innerHTML;
-    const totalTime = hrs += newM;
+    const totalHour = hrTotal.innerHTML;
+    const totalMinute = minTotal.innerHTML;
+    const totalSecond = secTotal.innerHTML;
 
-    return saveTime(totalWage, totalTime);
-}
+    // let hrs = hrTotal.innerHTML;
+    // const totalTime = hrs += newM;
 
-async function saveTime(totalWage, totalTime) {
     const id = window.location.toString().split("/")[
       window.location.toString().split("/").length - 1
     ];
-    if (id && totalWage && totalTime) {
+    if (id && totalWage && totalHour && totalMinute && totalSecond) {
         const response = await fetch(`/api/projects/${id}`, {
             method: 'PUT',
             body: JSON.stringify({ 
                 project_id: id,
                 wage: totalWage,
-                time: totalTime
+                hr: totalHour,
+                min: totalMinute,
+                sec: totalSecond
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -43,4 +47,4 @@ async function saveTime(totalWage, totalTime) {
     };
 };
   
-saveTimeBtn.addEventListener('click', runSave);
+saveTimeBtn.addEventListener('click', saveTime);
