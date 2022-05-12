@@ -16,8 +16,10 @@
       <h2>Enter Brief Description</h2>
       <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs code-description" />
       <h2>Enter Code Snippet</h2>
-      <textarea class="textarea textarea-primary w-full" placeholder="Type your code here.."></textarea>        <div class="modal-action">
-          <button for="my-modal-5" class="btn add-code-btn btn-primary  btn-active hover:bg-primary" type="button">Add Code</button>
+      {{!-- <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs code-content" /> --}}
+      <textarea class="textarea textarea-primary w-full code-content" placeholder="Type your code here.."></textarea>       
+       <div class="modal-action">
+          <button for="my-modal-5" id="add-code-btn" class="btn btn-primary btn-active hover:bg-primary" type="button">Add Code</button>
         </div>
       </div>
     </div>

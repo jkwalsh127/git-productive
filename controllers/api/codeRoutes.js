@@ -4,7 +4,6 @@ const withAuth = require("../../utils/auth");
 
 //GET route by id
 router.get("/:id", withAuth, (req, res) => {
-  res.send('testing')
   Code.findByPK(
     {
       //sections to get
@@ -27,7 +26,7 @@ router.get("/:id", withAuth, (req, res) => {
     }
     //post results
     res.json(codeData);
-    res.render('codeSnippet')
+    // res.render('codeSnippet')
 
     })
     .catch((err) => {
@@ -38,10 +37,12 @@ router.get("/:id", withAuth, (req, res) => {
 
 //create new code snippet
 router.post("/", withAuth, async (req, res) => {
-  console.log('api codes')
+
   try {
     const newSnippet = await Code.create({
-      ...req.body,
+      title: req.body.title,
+      content: req.body.content,
+      description: req.body.description,
       user_id: req.session.user_id,
     });
     res.render('codeSnippet');
