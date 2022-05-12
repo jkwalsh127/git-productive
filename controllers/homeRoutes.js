@@ -83,4 +83,27 @@ router.get("/code", withAuth, async (req, res) => {
   }
 });
 
+//GET route by id
+router.get("/code/:id", async (req, res) => {
+  try {
+    const codeData = await Code.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    });
+
+    const code = codeData.get({ plain: true });
+
+    res.render("singleCode", {
+      ...code,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
