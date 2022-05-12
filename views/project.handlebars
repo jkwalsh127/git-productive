@@ -21,42 +21,41 @@
       <div id="timer">
         00:00:00
       </div>
-      <div class="flex justify-center mt-4 mb-4">
-      <button class="btn btn-outline btn-primary mr-4" onclick="startTimer()">Start</button>
-      <button class="btn btn-outline btn-secondary mr-4" onclick="stopTimer()">Stop</button>
-      <button class="btn btn-outline btn-accent" onclick="resetTimer()">Reset</button>
-      </div>
-      <div class="card-actions justify-center">
-        <button class="btn btn-primary" type="submit">Log Time</button>
-      </div>
+
 
       <div class="form-control">
         <div class="input-group">
           <input type="text" placeholder="How often should you take a break?" class="input input-bordered input-primary w-full max-w-xs" id="break-input"/>
-          <button class="btn btn-square" onclick="startTimer()">Submit</button>
         </div>
       </div>
+      <div class="form-control">
+        <div class="input-group">
+          <input type="text" placeholder="How often should you take a break?" class="input input-bordered input-primary w-full max-w-xs" id="rate-input"/>
+        </div>
+      </div>
+      <button class="btn btn-square" onclick="startTimer()">Start Timer</button>
+
+
 
       <div class="stats bg-primary text-primary-content">
         <div class="stat">
-          <div class="stat-title">Hours Logged</div>
+          <div class="stat-title">Time Logged</div>
           <div class="stat-value">
             <div id="total-time">
-              <p id="hour-total">0 </p>
-              <p id="minute-total"> : 0 : </p>
+              <p id="hour-total">0</p><p>:</p>
+              <p id="minute-total">0</p><p>:</p>
               <p id="second-total">0</p>
             </div>
           </div>
           <div class="stat-actions">
-            <button class="btn btn-sm btn-success" id="save-time">Save Time</button>
+            <button class="btn btn-sm btn-success" id="save-time">Save Time and Wage</button>
           </div>
         </div>
       
         <div class="stat">
           <div class="stat-title">Current Charge</div>
-          <div class="stat-value">$<p id="earned-wage">0</p></div>
-          <div class="stat-actions">
-            <button class="btn btn-sm">Complete</button> 
+          <div class="flex flex-row">
+            <div class="stat-value">$<p id="earned-wage">{{this.wage}}</p></div>
           </div>
       </div>
   
@@ -106,4 +105,5 @@
 </div>
 
 <script src="/js/project.js"></script>
+<script src="/js/updateWage.js"></script>
 <script src="https://cdn.tailwindcss.com"></script>

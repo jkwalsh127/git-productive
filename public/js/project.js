@@ -1,4 +1,3 @@
-
 const timer = document.getElementById('timer');
 const modalContainer = document.getElementById('modal-container');
 const continueBtn = document.getElementById('continue');
@@ -6,91 +5,93 @@ const secondTotal = document.getElementById('second-total');
 const minuteTotal = document.getElementById('minute-total');
 const hourTotal = document.getElementById('hour-total');
 const earnedWage = document.getElementById('earned-wage');
-const saveTimeBtn = document.getElementById('save-time');
 
-const rate = 100;
+let wageValue = parseFloat(earnedWage.innerHTML);
 
-  var hr = 0;
-  var min = 0;
-  var sec = 0;
-  var stoptime = true;
+var hr = 0;
+var min = 0;
+var sec = 0;
+var stoptime = true;
+var totalSeconds = 0;
+var totalMinutes = 0;
+var totalHours = 0;
+var rate = 0;
 
-  var totalSeconds = 0;
-  var totalMinutes = 0;
-  var totalHours = 0;
-  
-  function startTimer() {
-    if (stoptime == true) {
-          stoptime = false;
-          timerCycle();
-      }
+function setWage() {
+  const rate = document.querySelector('#rate-input').value.trim();
+  console.log(rate);
+  // return rate
+  value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours) + wageValue;
+  earnedWage.innerHTML = value.toFixed(2)
+  return value;
+}
+
+function startTimer() {
+  if (stoptime == true) {
+        stoptime = false;
+        setWage();
+        timerCycle();
+    }
+}
+function stopTimer() {
+  if (stoptime == false) {
+    stoptime = true;
   }
-  function stopTimer() {
+}
+
+async function timerCycle() {
     if (stoptime == false) {
-      stoptime = true;
+    sec = parseInt(sec);
+    min = parseInt(min);
+    hr = parseInt(hr);
+    // var totalSec = [];
+    // var totalMin = [];
+    // var totalHr = [];
+    const breakTime = document.querySelector('#break-input').value.trim();
+    sec = sec + 1;
+
+    if (sec == 60) {
+      min = min + 1;
+      sec = 0;
     }
-  }
-  
-  async function timerCycle() {
-      if (stoptime == false) {
-      sec = parseInt(sec);
-      min = parseInt(min);
-      hr = parseInt(hr);
-      // var totalSec = [];
-      // var totalMin = [];
-      // var totalHr = [];
-
-
-      const breakTime = document.querySelector('#break-input').value.trim();
-
-      sec = sec + 1;
-  
-      if (sec == 60) {
-        min = min + 1;
-        sec = 0;
-      }
-      if (min == 60) {
-        hr = hr + 1;
-        min = 0;
-        sec = 0;
-      }
-  
-  
-      timer.innerHTML = hr + ':' + min + ':' + sec;
-
-      console.log(sec);
-      if ((breakTime - 1) == sec) {
-        totalSeconds += (sec + 1);
-        totalMinutes += min;
-        totalHours += hr;
-        // await totalSec.push(sec);
-        // await totalMin.push(min);
-        // await totalHr.push(hr);
-        if (totalSeconds >= 60) {
-          totalMinutes = totalMinutes + 1;
-          totalSeconds = 0;
-        }
-        if (totalMinutes >= 60) {
-          hourTotal.innerHTML = totalHr + 1;
-          minuteTotal.innerHTML = 0;
-          secondTotal.innerHTML = 0;
-        }
-        secondTotal.innerHTML = totalSeconds;
-        minuteTotal.innerHTML = totalMinutes;
-        hourTotal.innerHTML = totalHours;
-
-        // await addSeconds(totalSeconds);
-        // await addMinutes(totalMinutes);
-        // await addHours(totalHours);
-        await workValue(rate);
-        stopTimer();
-        modalContainer.classList.add('show');
-      }
-  
-      setTimeout("timerCycle()", 1000);
+    if (min == 60) {
+      hr = hr + 1;
+      min = 0;
+      sec = 0;
     }
-  }
 
+
+    timer.innerHTML = hr + ':' + min + ':' + sec;
+    console.log(sec);
+    if ((breakTime - 1) == sec) {
+      totalSeconds += (sec + 1);
+      totalMinutes += min;
+      totalHours += hr;
+      // await totalSec.push(sec);
+      // await totalMin.push(min);
+      // await totalHr.push(hr);
+      if (totalSeconds >= 60) {
+        totalMinutes = totalMinutes + 1;
+        totalSeconds = 0;
+      }
+      if (totalMinutes >= 60) {
+        hourTotal.innerHTML = totalHr + 1;
+        minuteTotal.innerHTML = 0;
+        secondTotal.innerHTML = 0;
+      }
+      secondTotal.innerHTML = totalSeconds;
+      minuteTotal.innerHTML = totalMinutes;
+      hourTotal.innerHTML = totalHours;
+      // await addSeconds(totalSeconds);
+      // await addMinutes(totalMinutes);
+      // await addHours(totalHours);
+      stopTimer();
+      modalContainer.classList.add('show');
+    }
+
+    setTimeout("timerCycle()", 1000);
+  }
+}
 // function addSeconds(totalSec) {
 //   console.log(totalSeconds);
 //   for (let i = 0; i < totalSec.length; i++) {
@@ -147,50 +148,16 @@ function resetTimer() {
 }
 
 continueBtn.addEventListener('click', () => {
+  // workValue(rate);
+  setWage();
   resetTimer();
   modalContainer.classList.remove('show');
 });
 
-async function workValue(rate) {
-  value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours)
-  earnedWage.innerHTML = value.toFixed(2);
-  return value;
-}
+// function workValue(rate) {
+//   value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours) + wageValue;
+//   earnedWage.innerHTML = value.toFixed(2)
+//   return value;
+// }
 
-
-const saveTime = async (event) => {
-  event.preventDefault();
-
-  var min = minuteTotal.innerHTML;
-  var m = (Math.round(min/15) * 15) % 60;
-  var newM = m/100;
-
-  var totalWage = earnedWage.innerHTML;
-  var hr = hourTotal.innerHTML;
-  var totalTime = hr += newM;
-
-  const id = window.location.toString().split("/")[
-    window.location.toString().split("/").length - 1
-  ];
-
-  console.log(totalWage);
-  console.log(totalTime);
-
-  const response = await fetch(`/api/projects/${id}`, {
-    method: 'PUT',
-    body: JSON.stringify({ 
-      wage: totalWage,
-      time: totalTime
-    }),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  if (response.ok) {
-    res.render('project');
-  } else {
-    alert('Failed to save time to database');
-  }
-};
-
-saveTimeBtn.addEventListener('click', saveTime);
+// document.querySelector('#commence-form').addEventListener('submit', startTimer);
