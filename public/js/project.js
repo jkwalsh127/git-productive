@@ -8,8 +8,6 @@ const earnedWage = document.getElementById('earned-wage');
 
 let wageValue = parseFloat(earnedWage.innerHTML);
 
-const rate = 100;
-
 var hr = 0;
 var min = 0;
 var sec = 0;
@@ -17,10 +15,21 @@ var stoptime = true;
 var totalSeconds = 0;
 var totalMinutes = 0;
 var totalHours = 0;
+var rate = 0;
+
+function setWage() {
+  const rate = document.querySelector('#rate-input').value.trim();
+  console.log(rate);
+  // return rate
+  value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours) + wageValue;
+  earnedWage.innerHTML = value.toFixed(2)
+  return value;
+}
 
 function startTimer() {
   if (stoptime == true) {
         stoptime = false;
+        setWage();
         timerCycle();
     }
 }
@@ -139,13 +148,16 @@ function resetTimer() {
 }
 
 continueBtn.addEventListener('click', () => {
-  workValue(rate);
+  // workValue(rate);
+  setWage();
   resetTimer();
   modalContainer.classList.remove('show');
 });
 
-function workValue(rate) {
-  value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours) + wageValue;
-  earnedWage.innerHTML = value.toFixed(2)
-  return value;
-}
+// function workValue(rate) {
+//   value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours) + wageValue;
+//   earnedWage.innerHTML = value.toFixed(2)
+//   return value;
+// }
+
+// document.querySelector('#commence-form').addEventListener('submit', startTimer);

@@ -228,21 +228,28 @@
       <div id="timer">
         00:00:00
       </div>
-      <ul>
+      {{!-- <ul>
         <li><button class="btn btn-outline btn-primary" onclick="startTimer()">Start</button></li>
         <li><button class="btn btn-outline btn-secondary" onclick="stopTimer()">Stop</button></li>
         <li><button class="btn btn-outline btn-accent" onclick="resetTimer()">Reset</button></li>
-      </ul>
-      <div class="card-actions justify-center">
+      </ul> --}}
+      {{!-- <div class="card-actions justify-center">
         <button class="btn btn-primary" type="submit">Log Time</button>
-      </div>
+      </div> --}}
 
       <div class="form-control">
         <div class="input-group">
           <input type="text" placeholder="How often should you take a break?" class="input input-bordered input-primary w-full max-w-xs" id="break-input"/>
-          <button class="btn btn-square" onclick="startTimer()">Submit</button>
         </div>
       </div>
+      <div class="form-control">
+        <div class="input-group">
+          <input type="text" placeholder="How often should you take a break?" class="input input-bordered input-primary w-full max-w-xs" id="rate-input"/>
+        </div>
+      </div>
+      <button class="btn btn-square" onclick="startTimer()">Start Timer</button>
+
+
 
       <div class="stats bg-primary text-primary-content">
         <div class="stat">
