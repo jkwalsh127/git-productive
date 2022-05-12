@@ -16,7 +16,7 @@ router.post("/", withAuth, async (req, res) => {
     });
     res.render('codeSnippet');
     
-    res.status(200).json(newSnippet);
+    // res.status(200).json(newSnippet);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -68,7 +68,7 @@ router.delete("/:id", withAuth, async (req, res) => {
     }
     res.render('codeSnippet');
 
-    res.status(200).json(codeData);
+    // res.status(200).json(codeData);
   } catch (err) {
     res.status(500).json(err);
   }
