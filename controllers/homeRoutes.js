@@ -66,7 +66,7 @@ router.get("/profile", withAuth, async (req, res) => {
 });
 
 //GET route for code snippet
-router.get("/codes", withAuth, async (req, res) => {
+router.get("/code", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: {exclude: ["password"]},

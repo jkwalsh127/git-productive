@@ -4,9 +4,9 @@ const newCodeFormHandler = async (event) => {
   const title = document.querySelector(".code-title").value.trim();
   const description = document.querySelector(".code-description").value.trim();
   const content = document.querySelector(".code-content").value.trim();
+console.log(title, content, description)
 
   if (title && description && content) {
-    try {
       const response = await fetch(`/api/codes`, {
         method: "POST",
         body: JSON.stringify({ title, description, content }),
@@ -16,13 +16,10 @@ const newCodeFormHandler = async (event) => {
       });
 
       if (response.ok) {
-        document.location.replace("/codes"); //by id?
+        document.location.replace("/code"); 
       } else {
         alert("Failed to create codes");
       }
-    } catch (err) {
-      res.status(400).json(err);
-    }
   }
 };
 
@@ -37,7 +34,7 @@ const delButtonHandler = async (event) => {
     console.log(id);
 
     if (response.ok) {
-      document.location.replace("/codes");
+      document.location.replace("/code");
     } else {
       alert("Failed to delete project");
     }
@@ -45,9 +42,7 @@ const delButtonHandler = async (event) => {
 };
 
 //event listener for new code snippet
-document
-  .querySelector(".add-code-btn")
-  .addEventListener("click", newCodeFormHandler);
+document.querySelector("#add-code-btn").addEventListener("click", newCodeFormHandler);
 
 
 const codeList = document.querySelectorAll(".code-list");
