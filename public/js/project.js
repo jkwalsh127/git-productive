@@ -6,6 +6,8 @@ const minuteTotal = document.getElementById('minute-total');
 const hourTotal = document.getElementById('hour-total');
 const earnedWage = document.getElementById('earned-wage');
 
+let wageValue = parseFloat(earnedWage.innerHTML);
+
 const rate = 100;
 
 var hr = 0;
@@ -74,7 +76,6 @@ async function timerCycle() {
       // await addSeconds(totalSeconds);
       // await addMinutes(totalMinutes);
       // await addHours(totalHours);
-      await workValue(rate);
       stopTimer();
       modalContainer.classList.add('show');
     }
@@ -138,12 +139,13 @@ function resetTimer() {
 }
 
 continueBtn.addEventListener('click', () => {
+  workValue(rate);
   resetTimer();
   modalContainer.classList.remove('show');
 });
 
-async function workValue(rate) {
-  value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours)
-  earnedWage.innerHTML = value.toFixed(2);
+function workValue(rate) {
+  value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours) + wageValue;
+  earnedWage.innerHTML = value.toFixed(2)
   return value;
 }
