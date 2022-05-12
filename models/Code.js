@@ -17,9 +17,9 @@ Code.init(
         content: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-          is: /^[0-9a-f]{1000}$/i
-        }
+        // validate: {
+        //   is: /^[0-9a-f]{1000}$/i
+        // }
       },
       description: {
         type: DataTypes.STRING,
