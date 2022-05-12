@@ -3,7 +3,6 @@ const { User, Project } = require('../models');
 
 const userData = require('./userData.json');
 const projectData = require('./projectData.json');
-const seedActivity = require('./activityData');
 const seedCodes = require('./codeData');
 
 const seedDatabase = async () => {
@@ -20,7 +19,6 @@ const seedDatabase = async () => {
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
- await seedActivity();
  await seedCodes();
  
   process.exit(0);

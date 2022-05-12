@@ -8,17 +8,10 @@ async function saveTime(event) {
 
     event.preventDefault();
 
-    // let minutes = minTotal.innerHTML;
-    // let m = (Math.round(minutes/15) * 15) % 60;
-    // let newM = m/100;
-
     const totalWage = earned.innerHTML;
     const totalHour = hrTotal.innerHTML;
     const totalMinute = minTotal.innerHTML;
     const totalSecond = secTotal.innerHTML;
-
-    // let hrs = hrTotal.innerHTML;
-    // const totalTime = hrs += newM;
 
     const id = window.location.toString().split("/")[
       window.location.toString().split("/").length - 1

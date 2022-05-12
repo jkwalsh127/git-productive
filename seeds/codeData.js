@@ -18,7 +18,8 @@ const codeData = [
         store: new SequelizeStore({
           db: sequelize,
         }),
-      }`
+      }`,
+      user_id: 1
   },
   {
     title: "Write To File",
@@ -26,6 +27,7 @@ const codeData = [
     content: `function writeFile(fileName, data) {
         return fs.writeFileSync(fileName, data);
       }`,
+      user_id: 1
   },
 ];
 
