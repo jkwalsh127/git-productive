@@ -38,7 +38,7 @@
               <tbody>
                 <tr class="hover">
                   <th><a
-                      href="/code/{{code.id}}"
+                      href="/codes/{{code.id}}"
                       class="basis-3/4"
                     >{{code.title}}</a></th>
                   <td><button
@@ -57,9 +57,9 @@
 {{!-- grabbing from the code snippet partial page for the page to render --}}
   {{!-- render code snippet card --}}
 <div class="mockup-code rendered-code">
-  <h2>{{code.title}}</h2>
-  <h3>{{code.description}}</h3>
-  <pre data-prefix="$"><code>{{code.content}}</code></pre> 
+  <h2>{{this.title}}</h2>
+  <h3>{{this.description}}</h3>
+  <pre data-prefix="$"><code>{{this.content}}</code></pre> 
 </div>
 </div>
 <script src="/js/code.js"></script>

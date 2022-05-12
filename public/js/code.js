@@ -1,3 +1,4 @@
+//create new code snippet
 const newCodeFormHandler = async (event) => {
   event.preventDefault();
 
@@ -23,6 +24,7 @@ console.log(title, content, description)
   }
 };
 
+//delete code snippet
 const delButtonHandler = async (event) => {
   event.preventDefault();
   if (event.target.hasAttribute("data-id")) {
@@ -44,31 +46,13 @@ const delButtonHandler = async (event) => {
 //event listener for new code snippet
 document.querySelector("#add-code-btn").addEventListener("click", newCodeFormHandler);
 
-
+//event 
 const codeList = document.querySelectorAll(".code-list");
 for (var i = 0; i < codeList.length; i++) {
   codeList[i].addEventListener("click", delButtonHandler);
 }
 
 
-// activeNote is used to keep track of the note in the textarea
-// let activeNote = {};
-
-// const renderActiveCode = () => {
-//   // hide(saveNoteBtn);
-
-//   if (activeNote.id) {
-//     noteTitle.setAttribute('readonly', true);
-//     noteText.setAttribute('readonly', true);
-//     noteTitle.value = activeNote.title;
-//     noteText.value = activeNote.text;
-//   } else {
-//     noteTitle.removeAttribute('readonly');
-//     noteText.removeAttribute('readonly');
-//     noteTitle.value = '';
-//     noteText.value = '';
-//   }
-// };
 
 
-//on click of new notes button
+
