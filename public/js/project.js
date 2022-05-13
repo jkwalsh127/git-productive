@@ -6,30 +6,25 @@ const minuteTotal = document.getElementById('minute-total');
 const hourTotal = document.getElementById('hour-total');
 const earnedWage = document.getElementById('earned-wage');
 
-let wageValue = parseFloat(earnedWage.innerHTML);
-
 var hr = 0;
 var min = 0;
 var sec = 0;
 var stoptime = true;
-var totalSeconds = 0;
-var totalMinutes = 0;
-var totalHours = 0;
+var totalSeconds = secondTotal.innerHTML;
+var totalMinutes = minuteTotal.innerHTML;
+var totalHours = hourTotal.innerHTML;
 var rate = 0;
 
 function setWage() {
   const rate = document.querySelector('#rate-input').value.trim();
-  console.log(rate);
-  // return rate
-  value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours) + wageValue;
-  earnedWage.innerHTML = value.toFixed(2)
+  value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours);
+  earnedWage.innerHTML = value.toFixed(2);
   return value;
 }
 
 function startTimer() {
   if (stoptime == true) {
         stoptime = false;
-        setWage();
         timerCycle();
     }
 }
@@ -41,13 +36,15 @@ function stopTimer() {
 
 async function timerCycle() {
     if (stoptime == false) {
+    
+    const breakTime = document.querySelector('#break-input').value.trim();
     sec = parseInt(sec);
     min = parseInt(min);
     hr = parseInt(hr);
-    // var totalSec = [];
-    // var totalMin = [];
-    // var totalHr = [];
-    const breakTime = document.querySelector('#break-input').value.trim();
+    totalSeconds = parseInt(totalSeconds);
+    totalMinutes = parseInt(totalMinutes);
+    totalHours = parseInt(totalHours);
+
     sec = sec + 1;
 
     if (sec == 60) {
@@ -60,16 +57,13 @@ async function timerCycle() {
       sec = 0;
     }
 
-
     timer.innerHTML = hr + ':' + min + ':' + sec;
     console.log(sec);
     if ((breakTime - 1) == sec) {
       totalSeconds += (sec + 1);
       totalMinutes += min;
       totalHours += hr;
-      // await totalSec.push(sec);
-      // await totalMin.push(min);
-      // await totalHr.push(hr);
+      console.log(totalSeconds);
       if (totalSeconds >= 60) {
         totalMinutes = totalMinutes + 1;
         totalSeconds = 0;
@@ -82,9 +76,7 @@ async function timerCycle() {
       secondTotal.innerHTML = totalSeconds;
       minuteTotal.innerHTML = totalMinutes;
       hourTotal.innerHTML = totalHours;
-      // await addSeconds(totalSeconds);
-      // await addMinutes(totalMinutes);
-      // await addHours(totalHours);
+      setWage();
       stopTimer();
       modalContainer.classList.add('show');
     }
@@ -92,72 +84,15 @@ async function timerCycle() {
     setTimeout("timerCycle()", 1000);
   }
 }
-// function addSeconds(totalSec) {
-//   console.log(totalSeconds);
-//   for (let i = 0; i < totalSec.length; i++) {
-//     totalSeconds += totalSec[i];
-//   }
-//   if (totalSeconds == 0) {
-//     return;
-//   }
-//   if (totalSeconds >= 60) {
-//     totalMinutes = totalMinutes + 1;
-//     totalSeconds = 0;
-//   }
-//   secondTotal.innerHTML = totalSeconds
-//   return totalSeconds;
-// }
-
-// function addMinutes(totalMin) {
-//   let totalHr = hourTotal.innerHTML;
-//   for (let i = 0; i < totalMin.length; i++) {
-//     totalMinutes += totalMin[i];
-//   }
-//   if (totalMinutes == 0) {
-//     return;
-//   }
-//   if (totalMinutes >= 60) {
-//     hourTotal.innerHTML = totalHr + 1;
-//     minuteTotal.innerHTML = 0;
-//     secondTotal.innerHTML = 0;
-//   }
-//   minuteTotal.innerHTML = totalMinutes
-//   return totalMinutes;
-// }
-
-// function addHours(totalHr) {
-//   for (let i = 0; i < totalHr.length; i++) {
-//     totalHours += totalHr[i];
-//   }
-//   if (totalHours == 0) {
-//     return;
-//   }
-//   hourTotal.innerHTML = totalHours
-//   return totalHours;
-// }
   
 function resetTimer() {
     sec = 0;
     min = 0;
     hr = 0;
-    // var totalSec = [];
-    // var totalMin = [];
-    // var totalHr = [];
     timer.innerHTML = '00:00:00';
-    // return totalSec, totalMin, totalHr;
 }
 
 continueBtn.addEventListener('click', () => {
-  // workValue(rate);
-  setWage();
   resetTimer();
   modalContainer.classList.remove('show');
 });
-
-// function workValue(rate) {
-//   value = ((rate * totalSeconds) / 3600) + ((rate * totalMinutes) / 60) + (rate * totalHours) + wageValue;
-//   earnedWage.innerHTML = value.toFixed(2)
-//   return value;
-// }
-
-// document.querySelector('#commence-form').addEventListener('submit', startTimer);
