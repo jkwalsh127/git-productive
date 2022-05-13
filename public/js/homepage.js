@@ -12,7 +12,6 @@ anime({
     targets: '.card',
     translateX: 250,
     translateX: -8,
-    
   });
   
   anime({
