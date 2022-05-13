@@ -59,19 +59,19 @@ async function timerCycle() {
 
     timer.innerHTML = hr + ':' + min + ':' + sec;
     console.log(sec);
-    if ((breakTime - 1) == sec) {
+    if ((breakTime) == min) {
       totalSeconds += (sec + 1);
       totalMinutes += min;
       totalHours += hr;
       console.log(totalSeconds);
-      if (totalSeconds >= 60) {
+      if (totalSeconds >= 61) {
         totalMinutes = totalMinutes + 1;
         totalSeconds = 0;
       }
-      if (totalMinutes >= 60) {
-        hourTotal.innerHTML = totalHr + 1;
-        minuteTotal.innerHTML = 0;
-        secondTotal.innerHTML = 0;
+      if (totalMinutes >= 61) {
+        totalHours = totalHours + 1;
+        totalMinutes = 0;
+        totalSeconds = 0;
       }
       secondTotal.innerHTML = totalSeconds;
       minuteTotal.innerHTML = totalMinutes;
