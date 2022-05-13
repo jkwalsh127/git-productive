@@ -69,11 +69,15 @@ The Login and Signup page meant to display a card-like feature that asks the use
 
 We create the User model to include "id", "username" and "password", and added hooks to hash user's password using [Bcrypt](https://www.npmjs.com/package/bcrypt). On front-end, the login and signup button listen to the user and onclick they fetch api from the server and redirect them to the homepage if succeed. The server on the backend has GET POST DELETE api routes to render, create and delete corresponding user data. The server also create and save a session when user signup/login and destory the session when user logout. 
 
+<img src= "/public/images/login.png" height="300px"><img src= "/public/images/signup.png" height="300px" >
+
 ### **Profile Page**
 
 The profile page is a User’s dashboard to display their activity on the app. Here they can see a list of their projects as well as create a new project. They can also see a chart that displays the amount of time spent on each project and the corresponding wages earned. A project history card and a new project card were created for users to create new project and vuew project history. When clicking on the specific project name in history list, user is redirected to that project page where they can start working and track their work.
 
 Project model is created with key of "id", "name", "description". The backend is serving api routes to GET - render all the project history list; POST - create a new project; DELETE - delete a project. The fontend fetch the api and refresh the page when user interact with the page.
+
+<img src= "./public/images/profile.gif" height="300px">
 
 ### **Project Page**
 
