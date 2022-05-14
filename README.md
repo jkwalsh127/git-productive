@@ -83,7 +83,7 @@ Project model is created with key of "id", "name", "description". The backend is
 
 The Project page is where a user goes to use the timer feature when they are actively working on a single project. The timer's primary function is to allow a user to set the time they would like to work before taking a break. When the timer goes off, the user is prompted with a few exercise suggestions. Once the user selects to continue coding, the previous work session is added to the total time spent on the project. Using the wage set by the user ahead of time, a quick calculation is done to render the total value of the time spent. Both the total time and total value are added to the database once the user selects the save button. 
 
-
+![project-timer](https://user-images.githubusercontent.com/101354032/168408372-39402929-b1e5-4763-a7a4-1b9fb7ee0d46.gif)
 
 ### **Code Snippet Page**
 
