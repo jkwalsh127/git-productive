@@ -81,6 +81,10 @@ Project model is created with key of "id", "name", "description". The backend is
 
 ### **Project Page**
 
+The Project page is where a user goes to use the timer feature when they are actively working on a single project. The timer's primary function is to allow a user to set the time they would like to work before taking a break. When the timer goes off, the user is prompted with a few exercise suggestions. Once the user selects to continue coding, the previous work session is added to the total time spent on the project. Using the wage set by the user ahead of time, a quick calculation is done to render the total value of the time spent. Both the total time and total value are added to the database once the user selects the save button. 
+
+
+
 ### **Code Snippet Page**
 
 The code snippet page is an added features to add to the functionality to this web app. While creating this, we felt it would be a beneficial tool to be able to add and label specific pieces of code to reference later instead of going  through old repositories to find the snippets of code you want to use again. With this added feature, the user can clearly label the piece of code they want to save, give a brief description of what it is, and then paste the piece of code to access at a later date.
