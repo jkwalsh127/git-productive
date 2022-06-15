@@ -1,4 +1,4 @@
-# git-productive
+# Git Productive
 
 Click <a href="https://git-productive.herokuapp.com/" target="_blank">**here**</a> to check out the deployed weather app!
 
