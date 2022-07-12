@@ -1,6 +1,6 @@
 # Git Productive
 
-Click <a href="https://git-productive.herokuapp.com/" target="_blank">**here**</a> to check out the deployed weather app!
+Click <a href="https://git-productive.herokuapp.com/" target="_blank">**here**</a> to check out the deployed app!
 
 ![jsBadge](https://img.shields.io/github/languages/top/jkwalsh127/git-productive?style=plastic)
 ![languages](https://img.shields.io/github/languages/count/jkwalsh127/git-productive)
