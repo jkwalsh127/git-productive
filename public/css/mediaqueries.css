@@ -251,6 +251,12 @@
     #password-login {
         width: 100%;
     }
+    #username-signup {
+        width: 100%;
+    }
+    #password-signup {
+        width: 100%;
+    }
     .signin-button {
         width: 100%;
     }

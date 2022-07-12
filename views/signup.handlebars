@@ -1,20 +1,27 @@
 
-<div class="justify-center flex mt-40">
- <form id="signup-form" class="form">
-  <div class="card w-96 bg-neutral text-neutral-content">
-    <div class="card-body items-center text-center">
-      <h2 class="card-title">Sign up today!</h2><br>
+<div class="justify-center flex login-container">
+  <div class="card bg-neutral text-neutral-content login-card">
+    <h2 class="login-header">
+      Sign up today!
+    </h2>
+    <p class="login-subheader">
+      Enter your credentials below to create a new account with us. If you already have one, click the login link instead!
+    </p>
+    <form id="login-form-wrap" class="form">
       <div class="form-control w-full max-w-xs">
-        <input id="username-signup" type="text" placeholder="Username" class="place-self-center text-neutral input input-bordered input-primary w-64 max-w-xs input-md mb-4" />
-        <input id="password-signup" type="text" placeholder="Password" class="place-self-center text-neutral input input-bordered input-primary w-64 max-w-xs input-md mb-4" />
+        <input id="username-signup" type="text" placeholder="Enter a username" class="place-self-center text-neutral input input-bordered input-primary w-64 max-w-xs input-md mb-4" />
+        <input id="password-signup" type="text" placeholder="Enter a password" class="place-self-center text-neutral input input-bordered input-primary w-64 max-w-xs input-md mb-4" />
       </div>
       <div class="card-actions justify-end">
-        <button class="btn btn-primary btn-wide btn-active hover:bg-primary" type="submit">Sign up</button>
+        <button class="btn btn-primary btn-wide btn-active hover:bg-primary signin-button" type="submit">
+          Sign up
+        </button>
       </div>
-      <a class ="underline" href="/login">Login instead</a>
-    </div>
+    </form>
+    <a class ="underline" href="/login">
+      Login instead
+    </a>
   </div>
- </form>
 </div>
 
 <script src="/js/signup.js"></script>
