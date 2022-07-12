@@ -48,9 +48,6 @@
     .about-paragraph {
         padding: 35px 40px 0 20px;
     }
-    .code-cards-outer {
-        min-width: 300px;
-    }
 }
 
 @media screen and (max-width: 770px) {
@@ -62,6 +59,14 @@
 @media screen and (max-width: 710px) {
     .about-header {
         height: 240px;
+    }
+    .code-container {
+        flex-direction: column;
+    }
+    .rendered-code {
+        width: 90%;
+        height: 400px;
+        min-height: 0;
     }
 }
 
@@ -88,14 +93,6 @@
     }
     .about-paragraph {
         padding: 30px 40px 0 0px;
-    }
-    .code-container {
-        flex-direction: column;
-    }
-    .rendered-code {
-        width: 90%;
-        height: 400px;
-        min-height: 0;
     }
 }
 

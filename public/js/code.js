@@ -53,7 +53,7 @@ const delButtonHandler = async (event) => {
 document.querySelector("#add-code-btn").addEventListener("click", newCodeFormHandler);
 document.querySelector("#cancel-code-btn").addEventListener("click", exitCodeFormHandler);
 
-//event 
+//event listener for deleting code snippet
 const codeList = document.querySelectorAll(".code-list");
 for (var i = 0; i < codeList.length; i++) {
   codeList[i].addEventListener("click", delButtonHandler);

@@ -245,9 +245,10 @@
     justify-content: center;
     width: 100%;
     align-items: center;
+    overflow: scroll;
 }
 .code-cards-outer {
-    min-width: 400px;
+    min-width: 340px;
     height: fit-content;
     margin: 0 0 0 20px;
     border-radius: 20px;
