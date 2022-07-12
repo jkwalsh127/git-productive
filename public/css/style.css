@@ -88,11 +88,6 @@
     display: flex;
 }
 
-.code-cards {
-    /* justify-content: center; */
-    min-width: 300px;
-    min-height: 600px;
-}
 
 .rendered-code {
     justify-content: center;
@@ -178,4 +173,33 @@
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
+}
+
+/* -- */
+/* -- */
+/* Code Snippets */
+/* -- */
+/* -- */
+.code-container {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.code-cards-outer {
+    min-width: 400px;
+    height: fit-content;
+    margin: 0 0 0 20px;
+    border-radius: 20px;
+}
+.code-cards-inner {
+    border-radius: 20px;
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.new-code-button {
+    margin: 10px 0 0 0;
 }

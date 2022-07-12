@@ -28,6 +28,17 @@
     .about-paragraph {
         padding: 35px 40px 0 20px;
     }
+    .code-cards-outer {
+        min-width: 300px;
+    }
+    /* .code-cards-inner {
+        border-radius: 20px;
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } */
 }
 
 @media screen and (max-width: 770px) {
@@ -87,6 +98,14 @@
     }
     .about-paragraph {
         padding: 30px 40px 0 0px;
+    }
+    .code-container {
+        flex-direction: column;
+    }
+    .rendered-code {
+        width: 90%;
+        height: 400px;
+        min-height: 0;
     }
 }
 
@@ -166,6 +185,9 @@
     .hero-info {
         font-size: 22px;
     }
+    .code-cards-outer {
+        margin: 0 0 0 0;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -211,5 +233,13 @@
     #logout {
         width: 50px;
         font-size: 10px;
+    }
+    .code-cards-outer {
+        width: 90%;
+        min-width: 250px;
+        padding: 0 5px;
+    }
+    .rendered-code {
+        min-width: 0;
     }
 }
