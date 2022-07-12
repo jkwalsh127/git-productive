@@ -5,7 +5,7 @@ const newCodeFormHandler = async (event) => {
   const title = document.querySelector(".code-title").value.trim();
   const description = document.querySelector(".code-description").value.trim();
   const content = document.querySelector(".code-content").value.trim();
-console.log(title, content, description)
+  console.log(title, content, description)
 
   if (title && description && content) {
       const response = await fetch(`/api/codes`, {
@@ -22,6 +22,12 @@ console.log(title, content, description)
         alert("Failed to create codes");
       }
   }
+};
+
+// Cancel creation of new snippet (close modal)
+const exitCodeFormHandler = async (event) => {
+  event.preventDefault();
+  document.location.replace("/code");
 };
 
 //delete code snippet
@@ -45,6 +51,7 @@ const delButtonHandler = async (event) => {
 
 //event listener for new code snippet
 document.querySelector("#add-code-btn").addEventListener("click", newCodeFormHandler);
+document.querySelector("#cancel-code-btn").addEventListener("click", exitCodeFormHandler);
 
 //event 
 const codeList = document.querySelectorAll(".code-list");
