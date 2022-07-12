@@ -267,3 +267,9 @@
     max-width: 220px;
     overflow: scroll;
 }
+.modal-label {
+    margin: 10px 0;
+}
+.modal-action {
+    justify-content: center;
+}
