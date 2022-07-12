@@ -1,21 +1,27 @@
 
-<div class="justify-center flex mt-40 ml-4 mr-4">
-  <form class="form" id="login-form">
-  <div class="card w-96 bg-neutral text-neutral-content">
-    <div class="card-body items-center text-center">
-      <h2 class="card-title">Login</h2><br>
+<div class="justify-center flex login-container">
+  <div class="card bg-neutral text-neutral-content login-card">
+    <h2 class="login-header">
+      Login
+    </h2>
+    <p class="login-subheader">
+      Please enter your login credentials to enter the site, or click the sign up button below if you haven't registered an account with us yet.
+    </p>
+    <form class="login-form-wrap" id="login-form">
       <div class="form-control w-full max-w-xs">
-        <input id="username-login" type="username" placeholder="Username" class="place-self-center text-primary-content input input-bordered input-primary w-64 max-w-xs mb-4" autofocus="true" />
-        <input id="password-login" type="password" placeholder="Password" class="place-self-center text-primary-content input input-bordered input-primary w-64 max-w-xs mb-4" autofocus="true"/>
+        <input id="username-login" type="username" placeholder="Enter your username" class="place-self-center text-primary-content input input-bordered input-primary w-64 max-w-xs mb-4" autofocus="true" value="username"/>
+        <input id="password-login" type="password" placeholder="Enter your password" class="place-self-center text-primary-content input input-bordered input-primary w-64 max-w-xs mb-4" autofocus="true"/>
       </div>
       <div class="card-actions justify-end">
-        <button class="btn btn-primary btn-wide btn-active hover:bg-primary" type="submit">Sign in</button>
+        <button class="btn btn-primary btn-wide btn-active hover:bg-primary signin-button" type="submit">
+          Sign in
+        </button>
       </div>
-      <a class ="underline"  href="/signup">Sign up now!</a>
-    </div>
+    </form>
+    <a class ="underline"  href="/signup">
+      Sign up now!
+    </a>
   </div>
-  </form>
 </div>
 
-  <script src="/js/login.js"></script>
-
+<script src="/js/login.js"></script>

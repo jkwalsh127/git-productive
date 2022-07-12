@@ -176,6 +176,9 @@
     #logout {
         width: 80px;
     }
+    .login-card {
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -241,5 +244,14 @@
     }
     .rendered-code {
         min-width: 0;
+    }
+    #username-login {
+        width: 100%;
+    }
+    #password-login {
+        width: 100%;
+    }
+    .signin-button {
+        width: 100%;
     }
 }
