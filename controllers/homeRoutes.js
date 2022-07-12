@@ -23,6 +23,7 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+// route for individual project page (timer/workout widget)
 router.get("/project/:id", async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {

@@ -44,7 +44,7 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/code");
     } else {
-      alert("Failed to delete project");
+      alert("Deleted snippet");
     }
   }
 };

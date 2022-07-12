@@ -1,33 +1,58 @@
-<div class="flex flex-col w-full lg:flex-row">
-{{!-- code data history --}}
-  <div class="card w-96 bg-base-200 shadow-xl basis3/4 ml-32 my-16">
-    <div class="card-body items-center text-center code-cards">
-      <h2 class="card-title">Code Snippets!</h2>
-      <!-- The button to open modal -->
-<label for="my-modal-5" class="btn modal-button">Create New Code</label>
-<a class="btn modal-button" href="/code" id="profile">View All</a>
+<div class="code-wrap">
 
+  <div class="instructions-container">
+    <h2 class="instructions-header">
+      Welcome to your Code Snippet page!
+    </h2>
+    <p class="instructions-paragraph">
+      Here is where you can save code snippets and view the ones that you had saved previously. Clicking on the title from the "Code Snippets!" list will render that code in the darker text area. Click "Create New Code" to open a modal where you can enter the title, a brief description, and the content of a new snippet. Click "Add Code" to save it and add it to the list.
+    </p>
+  </div>
 
-<!-- Put this part before </body> tag -->
-  <form>
-      <input type="checkbox" id="my-modal-5" class="modal-toggle" />
-      <div class="modal">
-        <div class="modal-box w-11/12 max-w-5xl">
-        <h2>Enter Title</h2>
-      <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs code-title" />
-      <h2>Enter Brief Description</h2>
-      <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs code-description" />
-      <h2>Enter Code Snippet</h2>
-      {{!-- <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs code-content" /> --}}
-      <textarea class="textarea textarea-primary w-full code-content" placeholder="Type your code here.."></textarea>       
-       <div class="modal-action">
-          <button for="my-modal-5" id="add-code-btn" class="btn btn-primary btn-active hover:bg-primary" type="button">Add Code</button>
-        </div>
-      </div>
-    </div>
-  </form>
-      {{#if codes.length}}
-        <div class="overflow-x-auto">
+  <div class="code-container">
+
+    {{!-- code data history --}}
+    <div class="bg-base-200 shadow-xl code-cards-outer">
+      <div class="code-cards-inner">
+        <h2 class="card-title">
+          Code Snippets!
+        </h2>
+        <!-- The button to open modal -->
+        <label for="my-modal-5" class="btn modal-button new-code-button">
+          Create New Code
+        </label>
+
+        <form>
+          <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box w-11/12 max-w-5xl">
+              <h2 class="modal-label">
+                Enter Title
+              </h2>
+              <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs code-title" />
+              <h2 class="modal-label">
+                Enter Brief Description
+              </h2>
+              <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs code-description" />
+              <h2 class="modal-label">
+                Enter Code Snippet
+              </h2>
+              <textarea class="textarea textarea-primary w-full code-content" placeholder="Type your code here.."></textarea>   
+
+              <div class="modal-action">
+                <button for="my-modal-5" id="add-code-btn" class="btn btn-primary btn-active hover:bg-primary" type="button">
+                  Add Code
+                </button>
+                <button for="my-modal-5" id="cancel-code-btn" class="btn btn-primary btn-active hover:bg-primary" type="button">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        {{#if codes.length}}
+        <div class="overflow-x-auto code-list">
           <table class="table w-full">
             <!-- head -->
             <thead>
@@ -37,31 +62,50 @@
               </tr>
             </thead>
             {{#each codes as |code|}}
-              <tbody>
-                <tr class="hover">
-                  <th><a
-                      href="/codes/{{code.id}}"
-                      class="basis-3/4"
-                    >{{code.title}}</a></th>
-                  <td><button
-                      data-id="{{code.id}}"
-                      class="basis-1/4 code-list"
-                    >Delete</button></td>
-                </tr>
-              </tbody>
+            <tbody>
+              <tr class="hover">
+                <th class="code-title">
+                  <a
+                    href="/code/{{code.id}}"
+                    class="basis-3/4"
+                  >
+                    {{code.title}}
+                  </a>
+                </th>
+                <td>
+                  <button
+                    data-id="{{code.id}}"
+                    class="basis-1/4 code-list"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
             {{/each}}
           </table>
         </div>
-      {{/if}}
+        {{/if}}
+      </div>
+    </div>
+
+    {{!-- grabbing from the code snippet partial page for the page to render --}}
+    {{!-- render code snippet card --}}
+    <div class="mockup-code rendered-code">
+      <h2>
+        {{this.title}}
+      </h2>
+      <h3>
+        {{this.description}}
+      </h3>
+      <pre data-prefix="$">
+        <code>
+          {{this.content}}
+        </code>
+      </pre> 
     </div>
   </div>
 
-{{!-- grabbing from the code snippet partial page for the page to render --}}
-  {{!-- render code snippet card --}}
-<div class="mockup-code rendered-code">
-  <h2 class="pl-8 pt-4 font-bold text-lg">{{this.title}}</h2>
-  <h3 class="pl-8 pt-4 font-medium">{{this.description}}</h3>
-  <pre class="pl-8 pt-4" data-prefix="$"><code>{{this.content}}</code></pre> 
 </div>
-</div>
+
 <script src="/js/code.js"></script>
