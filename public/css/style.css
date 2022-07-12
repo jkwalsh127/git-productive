@@ -1,17 +1,44 @@
 #gitLogo {
     border-radius: 150px;
     width: 100px;
+    margin: 0 0 0 30px;
 }
+
+/* -- */
+/* -- */
+/* Hero */
+.hero-content-wrap {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 150px 0 0 0;
+}
+.hero-title {
+    font-size: 50px;
+}
+.hero-info {
+    font-size: 30px; 
+    height: 20px; 
+    width: 70%;
+}
+.info-button {
+    margin: 20px 0 0 0;
+}
+
 
 .navbar {
     display: flex;
     justify-content: space-between;
+    position: absolute;
+    top: 0;
+    z-index: 500;
 }
 
 #animateMe {
     color: #fff;
     font-weight: 800;
-    font-size: 5vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,22 +48,8 @@
     box-sizing: border-box;
     margin: 0;
     pointer-events: none;
-  }
-  /* #heroSlogan {
-      
-  }
-
-  .homeinfo {
-    font-weight: normal;
-    font-size: large;
-} */
-
-#about-me {
-    font-size: 30px;
-    font-weight: bold;
-    border-right: 2px solid ;
-    padding: 20px;
 }
+
 
 .modal-container {
     display: none;
@@ -52,13 +65,11 @@
     transition: opacity 0.3s ease;
     z-index: 2;
 }
-
 .modal-container.show {
     pointer-events: auto;
     opacity: 1;
     display: flex;
 }
-
 .modal-card {
     background-color: rgba(65, 69, 185, 0.481);
     width: 600px;
@@ -68,10 +79,10 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .modal-card h1 {
     font-size: 16px;
 }
+
 
 #total-time {
     display: flex;
@@ -90,7 +101,44 @@
     margin: 20px;
 }
 
-.infocard {
-    height: fit-content;
-    min-width: 450px;
+.info-cards {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.info-card {
+    width: 90%;
+    max-width: 1010px;
+    margin: 20px auto 0 auto;
+    padding: 0 20px 0 0;
+    flex-direction: row;
+    align-items: center;
+}
+.info-card-body {
+    padding: 10px 10px 10px 40px;
+}
+.info-card-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 10px 10px 10px;
+}
+
+/* -- */
+/* -- */
+/* About */
+.about-wrap {
+    display: flex;
+    flex-direction: row;
+}
+.about-header {
+    height: 160px;
+    margin: 32px 16px 32px 16px;
+    font-size: 30px;
+    font-weight: bold;
+    border-right: 2px solid;
+    padding: 20px;
+}
+.about-paragraph {
+    padding: 40px 40px 0 20px;
 }

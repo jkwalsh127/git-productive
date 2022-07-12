@@ -2,7 +2,7 @@
 anime({
     targets: '#animateMe',
     translateY: 270,
-    translateY: -100,
+    translateY: -80,
     direction: 'alternate',
     delay: anime.stagger(100) 
   });
@@ -12,13 +12,6 @@ anime({
     targets: '.card',
     translateX: 250,
     translateX: -8,
-  });
-  
-  anime({
-    targets: '.infocard',
-    translateX: 250,
-    translateX: -5,
-    rotate: '1turn'
   });
   
   anime({
