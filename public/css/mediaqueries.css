@@ -250,4 +250,8 @@
     .signin-button {
         width: 100%;
     }
+    .code-title {
+        max-width: 150px;
+        overflow: scroll;
+    }
 }

@@ -168,7 +168,22 @@
     margin: 0 0 15px 0;
 }
 
-
+/* -- */
+/* -- */
+/* Page Instructions */
+/* -- */
+/* -- */
+.instructions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 800px;
+}
+.instructions-header {
+    font-size: 30px;
+    text-align: center;
+}
 
 
 /* -- */
@@ -181,16 +196,6 @@
     flex-direction: column;
     align-items: center;
     margin-top: 120px;
-}
-.instructions-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    max-width: 800px;
-}
-.instructions-header {
-    font-size: 30px;
 }
 .profile-cards-wrap {
     margin-top: 20px;
@@ -228,10 +233,17 @@
 /* Code Snippets */
 /* -- */
 /* -- */
-.code-container {
-    margin-top: 120px;
+.code-wrap {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;    
+}
+.code-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     align-items: center;
 }
 .code-cards-outer {
@@ -250,4 +262,8 @@
 }
 .new-code-button {
     margin: 10px 0 0 0;
+}
+.code-title {
+    max-width: 220px;
+    overflow: scroll;
 }
