@@ -1,5 +1,11 @@
 #gitLogo {
-    border: 1em;
+    border-radius: 150px;
+    width: 100px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
 }
 
 #animateMe {
