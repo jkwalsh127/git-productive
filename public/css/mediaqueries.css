@@ -166,6 +166,26 @@
     .login-card {
         width: 80%;
     }
+    .timer-card-wrap {
+        width: 90%;
+    }
+    #save-time {
+        width: 130px;
+        font-size: 10px;
+    }
+    .stat-value {
+        font-size: 30px;
+    }
+    #denomination {
+        font-size: 28px;
+    }
+    #earned-wage {
+        font-size: 28px;
+    }
+    .stat {
+        padding: 12px 15px 12px 6px;
+        margin: 0;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -177,6 +197,29 @@
     }
     .code-cards-outer {
         margin: 0 0 0 0;
+    }
+    .stats {
+        display: flex;
+        flex-direction: column;
+    }
+    .stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 6px 0;
+    }
+    #save-time {
+        width: 200px;
+        font-size: 16px;
+    }
+    .stat-value {
+        font-size: 36px;
+    }
+    #denomination {
+        font-size: 36px;
+    }
+    #earned-wage {
+        font-size: 36px;
     }
 }
 
@@ -206,6 +249,9 @@
     .card-container {
         margin: 10px 10px;
         min-width: 0;
+    }
+    #timer {
+        font-size: 40px;
     }
 }
 
@@ -250,5 +296,26 @@
     .code-title {
         max-width: 150px;
         overflow: scroll;
+    }
+    #timer {
+        font-size: 30px;
+    }
+    #break-input {
+        width: 90%;
+        align-self: center;
+    }
+    #rate-input {
+        width: 90%;
+        align-self: center;
+    }
+    .stat-actions {
+        margin: 10px 0 0 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;    
+    }
+    #save-time {
+        width: 90%;
+        font-size: 14px;
     }
 }
