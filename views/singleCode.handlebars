@@ -21,6 +21,9 @@
         <label for="my-modal-5" class="btn modal-button new-code-button">
           Create New Code
         </label>
+        <a class="btn modal-button mt-4" href="/code">
+          View All
+        </a>
 
         <form>
           <input type="checkbox" id="my-modal-5" class="modal-toggle" />
@@ -52,7 +55,7 @@
         </form>
 
         {{#if codes.length}}
-        <div class="overflow-x-auto code-list">
+        <div class="overflow-x-auto">
           <table class="table w-full">
             <!-- head -->
             <thead>
@@ -66,7 +69,7 @@
               <tr class="hover">
                 <th class="code-title">
                   <a
-                    href="/code/{{code.id}}"
+                    href="/codes/{{code.id}}"
                     class="basis-3/4"
                   >
                     {{code.title}}
@@ -92,16 +95,20 @@
     {{!-- grabbing from the code snippet partial page for the page to render --}}
     {{!-- render code snippet card --}}
     <div class="mockup-code rendered-code">
-      <h2>
+      <h2 class="current-snippet-title">
         {{this.title}}
       </h2>
-      <h3>
+      <h3 class="current-snippet-description">
         {{this.description}}
       </h3>
-      <pre data-prefix="$">
-        <code>
+      <div class="snippet-wrap">
+        <p id="code-prefix">
+          $
+        </p>
+        <p id="code">
           {{this.content}}
-        </code>
+        </p>
+      </div>
       </pre> 
     </div>
   </div>
