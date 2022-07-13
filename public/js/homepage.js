@@ -17,7 +17,7 @@ anime({
   anime({
     targets: '.mockup-code, .code-card',
     keyframes: [
-      {translateY: -40},
+      {translateY: -20},
       {translateX: 250},
       {translateY: 40},
       {translateX: 0},
