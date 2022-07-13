@@ -117,20 +117,65 @@
 /* -- */
 /* -- */
 /* About */
+/* -- */
+/* -- */
+.about-container {
+    display: flex;
+    flex-direction: column;
+}
 .about-wrap {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .about-header {
     height: 160px;
-    margin: 32px 16px 32px 16px;
-    font-size: 30px;
+    margin: 8px 16px;
+    font-size: 22px;
     font-weight: bold;
     border-right: 2px solid;
     padding: 20px;
+    width: 200px;
+    min-width: 200px;
+    text-justify: center;
 }
 .about-paragraph {
+    font-size: 22px;
+    width: 500px;
     padding: 40px 40px 0 20px;
+}
+#about-owner-header {
+    margin-top: 40px;
+    padding: 10px;
+    height: 50px;
+}
+#about-owner-paragraph {
+    margin-top: 40px;
+    text-justify: center;
+    height: 50px;
+    padding: 10px;
+}
+#about-site-header {
+    padding: 10px;
+    height: 150px;
+}
+#about-site-paragraph {
+    width: 800px;
+    font-size: 16px;
+    padding: 0 0 0 20px;
+}
+#about-technologies-header {
+    padding: 10px;
+    height: 90px;
+}
+.technologies-wrap {
+    display: flex;
+    flex-direction: column;
+}
+#about-technologies-paragraph {
+    width: 800px;
+    font-size: 16px;
+    padding: 0 0 0 20px;
 }
 
 
