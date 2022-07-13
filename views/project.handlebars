@@ -1,7 +1,7 @@
 <div class="modal-container"  id="modal-container">
-  <div class="modal-card w-6/12">
+  <div class="modal-card w-6/12" id="modal-card">
   {{> activities}}
-    <div  class="flex justify-center w-full mt-8">
+    <div  class="flex justify-center w-full">
       <button class="btn btn-primary text-primary-content" id="continue">
         Continue Coding
       </button>
@@ -13,9 +13,9 @@
   <h2 class="card-title" style="font-size: 50px;margin: 40px 0;">{{this.name}}</h2>
 </div>
 
-{{!-- begin timer card --}}
 <div class="project-wrap">
 
+  {{!-- Page Instructions --}}
   <div class="instructions-container">
     <h2 class="instructions-header">
       Welcome to your Project Page!
@@ -25,6 +25,7 @@
     </p>
   </div>
   
+  {{!-- begin timer card --}}
   <div class="timer-container">
     <div class="timer-card-wrap">
       <div class="timer-card">

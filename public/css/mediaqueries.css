@@ -1,3 +1,12 @@
+@media screen and (max-width: 1450px) {
+    #carousel-bar-items {
+        display: flex;
+        flex-direction: column;
+    }
+    #carousel-bar {
+        min-width: 400px;
+    }
+}
 @media screen and (max-width: 1070px) {
     .about-header {
         height: 160px;
@@ -12,6 +21,9 @@
     .card-image {
         border-radius: 1em 0 0 1em;
         max-height: 200px;
+    }
+    #modal-card {
+        padding: 0;
     }
 }
 
@@ -183,8 +195,11 @@
         font-size: 28px;
     }
     .stat {
-        padding: 12px 15px 12px 6px;
+        padding: 12px 15px 12px 12px;
         margin: 0;
+    }
+    #exercise-name {
+        font-size: 22px;
     }
 }
 
@@ -220,6 +235,19 @@
     }
     #earned-wage {
         font-size: 36px;
+    }
+    #modal-card {
+        min-width: 455px;
+    }
+    #carousel-bar {
+        min-width: 280px;
+        width: 280px;
+    }
+    #carousel-bar-items {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+        /* height: 530px; */
     }
 }
 

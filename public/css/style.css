@@ -321,3 +321,32 @@
 #rate-input {
     width: 300px;
 }
+#modal-container {
+}
+#carousel {
+    margin: 180px 0 0 0;
+    height: 440px;
+}
+#carousel-bar {
+    margin: 100px auto 0 auto;
+}
+#carousel-bar-items {
+}
+#modal-card {
+    min-width: 455px;
+}
+#slide1 {
+    height: 440px;
+}
+#slide2 {
+    height: 440px;
+}
+#slide3 {
+    height: 440px;
+}
+#slide4 {
+    height: 440px;
+}
+#slide5 {
+    height: 440px;
+}
